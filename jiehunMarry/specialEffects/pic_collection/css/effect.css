@@ -1,0 +1,2294 @@
+@charset "utf-8";
+/*-----------------------------------清除默认样式-------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+i,
+b,
+em,
+strong {
+  font-style: normal;
+}
+img {
+  display: block;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(http://2.tthunbohui.cn/zhuanti/10809/YQH-imgBj-logo.png);
+  background-size: 20% auto;
+}
+.clear-A {
+  text-decoration: none;
+  color: #333;
+}
+/*---------------------------------------end------------------------------------------------*/
+/*-------------------------------------公共样式---------------------------------------------*/
+.wrap {
+  width: 15rem;
+  margin: 0 auto;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+body {
+  font-family: "微软雅黑" !important;
+  color: #333;
+  font-size: 40px;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.middle:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  font-size: 0;
+}
+.marginfix:before {
+  content: "";
+  display: table;
+}
+/* *******************************背景图设置mixin */
+/* ******************************end */
+/* *************************鼠标移入wayra效果mixin */
+.weddingExpoFile-public-header {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+}
+.weddingExpoFile-public-header .header-nav {
+  height: 100%;
+  padding: 0 10px;
+}
+.weddingExpoFile-public-header .header-nav:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.weddingExpoFile-public-header .navas {
+  float: left;
+  font-size: 0;
+}
+.weddingExpoFile-public-header .navas a {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #563d7c;
+  height: 42px;
+  text-decoration: none;
+  line-height: 42px;
+}
+.weddingExpoFile-public-header .navas .active {
+  color: #463265;
+  background-color: #ececec;
+}
+.weddingExpoFile-public-header .navas .activeIn {
+  color: #463265;
+  background-color: #ececec;
+}
+/* *******************************end */
+/*---------------------------------------end------------------------------------------------*/
+body {
+  font-size: 16px;
+}
+.pic-effect-container {
+  text-align: center;
+  width: 100%;
+  max-width: 1650px;
+  table-layout: fixed;
+  margin: auto;
+}
+.efct-h2 {
+  padding: 20px;
+  font-weight: normal;
+  font-size: 24px;
+}
+.efct-h1 {
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  background: #6f5499;
+  color: #fff;
+  font-weight: normal;
+}
+/* ****************************基础样式 */
+.pic-effect {
+  max-width: 550px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.pic-effect img {
+  width: 551px;
+  height: 380px;
+}
+.pic-effect .middle-cover {
+  position: absolute;
+  color: #fff;
+  padding: 4% 0 6% 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+.pic-effect .middle-cover h2 {
+  margin: 0;
+  padding: 0 4%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  margin-bottom: 2%;
+  font-size: 24px;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+.pic-effect .middle-cover p {
+  margin: 0;
+  padding: 0 4%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  opacity: 0.8;
+  font-size: 16px;
+  line-height: 20px;
+  max-height: 40px;
+  overflow: hidden;
+}
+.pic-effect a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  opacity: 0;
+}
+.pic-effect .edit-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: left;
+  cursor: default;
+  display: none;
+  font-size: 14px;
+}
+.pic-effect .edit-btn:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.pic-effect .edit-btn li {
+  padding: 5px 15px;
+  color: #fff;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  padding-right: 30px;
+  background: url(../images/go.png) no-repeat center right;
+  background-size: 26px;
+  background-color: green;
+}
+.pic-effect .edit-btn .edit-pic {
+  display: none;
+}
+.pic-effect .edit-btn .back {
+  display: none;
+}
+/* ****************************基础样式end */
+/* ****************************图片特效1 */
+.pic-effect001 img {
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect001 .middle-cover {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.pic-effect001:hover img {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+}
+/* ****************************图片特效1 end */
+/* ****************************图片特效2 */
+.pic-effect002 img {
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+  transform-origin: top left;
+  -ms-transform-origin: top left;
+  /* IE 9 */
+  -webkit-transform-origin: top left;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: top left;
+  /* Firefox */
+  -o-transform-origin: top left;
+  /* Opera */
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+}
+.pic-effect002 .middle-cover {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.pic-effect002:hover img {
+  transform-origin: top left;
+  -ms-transform-origin: top left;
+  /* IE 9 */
+  -webkit-transform-origin: top left;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: top left;
+  /* Firefox */
+  -o-transform-origin: top left;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+}
+/* ****************************图片特效2 end */
+/* ****************************图片特效3 */
+.pic-effect003 img {
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect003 .middle-cover {
+  width: 110%;
+  height: 110%;
+  left: -5%;
+  top: -5%;
+  background: #D4356E;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(0.92);
+  -ms-transform: scale(0.92);
+  /* IE 9 */
+  -moz-transform: scale(0.92);
+  /* Firefox */
+  -webkit-transform: scale(0.92);
+  /* Safari 和 Chrome */
+  -o-transform: scale(0.92);
+  /* Opera */
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect003 .middle-cover h2 {
+  position: relative;
+  top: 45%;
+}
+.pic-effect003 .middle-cover p {
+  position: relative;
+  top: 45%;
+}
+.pic-effect003:hover .middle-cover {
+  opacity: 0.9;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+}
+.pic-effect003:hover img {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+}
+/* ****************************图片特效4 */
+.pic-effect004 {
+  background: black;
+}
+.pic-effect004 img {
+  width: 110%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translate(-9%);
+  -ms-transform: translate(-9%);
+  /* IE 9 */
+  -moz-transform: translate(-9%);
+  /* Firefox */
+  -webkit-transform: translate(-9%);
+  /* Safari 和 Chrome */
+  -o-transform: translate(-9%);
+  /* Opera */
+  opacity: 0.8;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect004 .middle-cover {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  text-align: left;
+  text-indent: 2%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  /* IE 9 */
+  -moz-transform: translateY(30px);
+  /* Firefox */
+  -webkit-transform: translateY(30px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(30px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect004 .middle-cover p {
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  /* IE 9 */
+  -moz-transform: translateY(10px);
+  /* Firefox */
+  -webkit-transform: translateY(10px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(10px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect004:hover .middle-cover p {
+  opacity: 0.8;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect004:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.2);
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect004:hover img {
+  opacity: 1;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+/* ****************************图片特效4 end */
+/* ****************************图片特效5 */
+.pic-effect005 img {
+  height: 105%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-4.7%);
+  -ms-transform: translateY(-4.7%);
+  /* IE 9 */
+  -moz-transform: translateY(-4.7%);
+  /* Firefox */
+  -webkit-transform: translateY(-4.7%);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-4.7%);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect005 .middle-cover {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect005 .middle-cover h2 {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 50%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  /* IE 9 */
+  -moz-transform: translateY(-40px);
+  /* Firefox */
+  -webkit-transform: translateY(-40px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-40px);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect005 .middle-cover p {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 50%;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: opacity 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: opacity 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect005 .middle-cover:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  width: 0;
+  height: 80%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: width 0.3s ease-out;
+  -moz-transition: width 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: width 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: width 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect005 .middle-cover:after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 5%;
+  width: 80%;
+  height: 0;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  transition: height 0.3s ease-out;
+  -moz-transition: height 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: height 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: height 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect005:hover .middle-cover:before {
+  width: 90%;
+}
+.pic-effect005:hover .middle-cover:after {
+  height: 90%;
+}
+.pic-effect005:hover .middle-cover h2 {
+  -ms-transform: translate(0, -20px);
+  transform: translate3d(0, -20px, 0);
+  -webkit-transform: translate3d(0, -20px, 0);
+  -moz-transform: translate3d(0, -20px, 0);
+  -o-transform: translate(0, -20px);
+}
+.pic-effect005:hover img {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect005:hover .middle-cover p {
+  opacity: 1;
+}
+.pic-effect005:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+/* ****************************图片特效5 end */
+/* ****************************图片特效6 */
+.pic-effect006 .middle-cover {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect006 .middle-cover h2 {
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  left: 10%;
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect006 .middle-cover p {
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  left: 10%;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(0);
+  -ms-transform: scale(0);
+  /* IE 9 */
+  -moz-transform: scale(0);
+  /* Firefox */
+  -webkit-transform: scale(0);
+  /* Safari 和 Chrome */
+  -o-transform: scale(0);
+  /* Opera */
+}
+.pic-effect006 .middle-cover:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 1px solid white;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(0);
+  -ms-transform: scale(0);
+  /* IE 9 */
+  -moz-transform: scale(0);
+  /* Firefox */
+  -webkit-transform: scale(0);
+  /* Safari 和 Chrome */
+  -o-transform: scale(0);
+  /* Opera */
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect006:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect006:hover .middle-cover h2 {
+  -ms-transform: translate(0, -40px);
+  transform: translate3d(0, -40px, 0);
+  -webkit-transform: translate3d(0, -40px, 0);
+  -moz-transform: translate3d(0, -40px, 0);
+  -o-transform: translate(0, -40px);
+}
+.pic-effect006:hover .middle-cover p {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+  opacity: 1;
+}
+.pic-effect006:hover .middle-cover:before {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+  opacity: 1;
+}
+/* ****************************图片特效7 */
+.pic-effect007 .middle-cover {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+  text-align: right;
+}
+.pic-effect007 .middle-cover h2 {
+  padding: 0;
+  position: absolute;
+  top: 70px;
+  width: 90%;
+  left: 5%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  /* IE 9 */
+  -moz-transform: translateY(20px);
+  /* Firefox */
+  -webkit-transform: translateY(20px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(20px);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect007 .middle-cover p {
+  padding: 0;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: 30px;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  /* IE 9 */
+  -moz-transform: translateY(40px);
+  /* Firefox */
+  -webkit-transform: translateY(40px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(40px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+  opacity: 0;
+}
+.pic-effect007 .middle-cover:before {
+  content: "";
+  position: absolute;
+  right: 5%;
+  left: 5%;
+  height: 2px;
+  top: 120px;
+  background: white;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  /* IE 9 */
+  -moz-transform: translateY(40px);
+  /* Firefox */
+  -webkit-transform: translateY(40px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(40px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+  opacity: 0;
+}
+.pic-effect007:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect007:hover .middle-cover h2 {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect007:hover .middle-cover p {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+  opacity: 1;
+}
+.pic-effect007:hover .middle-cover:before {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+  opacity: 1;
+}
+/* ****************************图片特效8 */
+.pic-effect008 img {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect008 .middle-cover {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  left: 0;
+  top: 0;
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect008 .middle-cover h2 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  /* IE 9 */
+  -moz-transform: translateY(-40px);
+  /* Firefox */
+  -webkit-transform: translateY(-40px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-40px);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect008 .middle-cover p {
+  position: absolute;
+  width: 80%;
+  max-height: none;
+  left: 10%;
+  top: 50%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 6% 5%;
+  border: 1px solid #fff;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1) translateY(50px);
+  -ms-transform: scale(1.1) translateY(50px);
+  /* IE 9 */
+  -moz-transform: scale(1.1) translateY(50px);
+  /* Firefox */
+  -webkit-transform: scale(1.1) translateY(50px);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1) translateY(50px);
+  /* Opera */
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect008:hover img {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+}
+.pic-effect008:hover .middle-cover h2 {
+  -ms-transform: translate(0, -60px);
+  transform: translate3d(0, -60px, 0);
+  -webkit-transform: translate3d(0, -60px, 0);
+  -moz-transform: translate3d(0, -60px, 0);
+  -o-transform: translate(0, -60px);
+}
+.pic-effect008:hover .middle-cover p {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(0) scale(1);
+  -ms-transform: translateY(0) scale(1);
+  /* IE 9 */
+  -moz-transform: translateY(0) scale(1);
+  /* Firefox */
+  -webkit-transform: translateY(0) scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(0) scale(1);
+  /* Opera */
+  opacity: 1;
+}
+.pic-effect008:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+/* ****************************图片特效9 */
+.pic-effect009 img {
+  width: 110%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateX(-9%);
+  -ms-transform: translateX(-9%);
+  /* IE 9 */
+  -moz-transform: translateX(-9%);
+  /* Firefox */
+  -webkit-transform: translateX(-9%);
+  /* Safari 和 Chrome */
+  -o-transform: translateX(-9%);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect009 .middle-cover {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+  text-align: left;
+}
+.pic-effect009 .middle-cover:before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border: 1px solid #fff;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateX(-20px);
+  -ms-transform: translateX(-20px);
+  /* IE 9 */
+  -moz-transform: translateX(-20px);
+  /* Firefox */
+  -webkit-transform: translateX(-20px);
+  /* Safari 和 Chrome */
+  -o-transform: translateX(-20px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+  opacity: 0;
+}
+.pic-effect009 .middle-cover h2 {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 55%;
+}
+.pic-effect009 .middle-cover p {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 55%;
+  margin-top: 40px;
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateX(-20px);
+  -ms-transform: translateX(-20px);
+  /* IE 9 */
+  -moz-transform: translateX(-20px);
+  /* Firefox */
+  -webkit-transform: translateX(-20px);
+  /* Safari 和 Chrome */
+  -o-transform: translateX(-20px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect009:hover img {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect009:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect009:hover .middle-cover:before {
+  opacity: 1;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect009:hover .middle-cover p {
+  opacity: 1;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+/* ****************************图片特效10 */
+.pic-effect0010 .middle-cover {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0010 .middle-cover:before {
+  content: "";
+  display: table;
+}
+.pic-effect0010 .middle-cover h2 {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 50%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  /* IE 9 */
+  -moz-transform: translateY(-40px);
+  /* Firefox */
+  -webkit-transform: translateY(-40px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-40px);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0010 .middle-cover p {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 50%;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: opacity 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: opacity 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0010 .middle-cover:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  /* IE 9 */
+  -moz-transform: scaleX(0);
+  /* Firefox */
+  -webkit-transform: scaleX(0);
+  /* Safari 和 Chrome */
+  -o-transform: scaleX(0);
+  /* Opera */
+}
+.pic-effect0010 .middle-cover:after {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  /* IE 9 */
+  -moz-transform: scaleY(0);
+  /* Firefox */
+  -webkit-transform: scaleY(0);
+  /* Safari 和 Chrome */
+  -o-transform: scaleY(0);
+  /* Opera */
+}
+.pic-effect0010:hover .middle-cover:before {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  /* IE 9 */
+  -moz-transform: scaleX(1);
+  /* Firefox */
+  -webkit-transform: scaleX(1);
+  /* Safari 和 Chrome */
+  -o-transform: scaleX(1);
+  /* Opera */
+}
+.pic-effect0010:hover .middle-cover:after {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  /* IE 9 */
+  -moz-transform: scaleY(1);
+  /* Firefox */
+  -webkit-transform: scaleY(1);
+  /* Safari 和 Chrome */
+  -o-transform: scaleY(1);
+  /* Opera */
+}
+.pic-effect0010:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect0010:hover .middle-cover h2 {
+  -ms-transform: translate(0, -20px);
+  transform: translate3d(0, -20px, 0);
+  -webkit-transform: translate3d(0, -20px, 0);
+  -moz-transform: translate3d(0, -20px, 0);
+  -o-transform: translate(0, -20px);
+}
+.pic-effect0010:hover .middle-cover p {
+  opacity: 1;
+}
+/* ****************************图片特效11 */
+.pic-effect0011 img {
+  height: 105%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-4.7%);
+  -ms-transform: translateY(-4.7%);
+  /* IE 9 */
+  -moz-transform: translateY(-4.7%);
+  /* Firefox */
+  -webkit-transform: translateY(-4.7%);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-4.7%);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0011 .middle-cover {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0011 .middle-cover h2 {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 50%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  /* IE 9 */
+  -moz-transform: translateY(-60px);
+  /* Firefox */
+  -webkit-transform: translateY(-60px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-60px);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0011 .middle-cover p {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 50%;
+  margin-top: 20px;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  /* IE 9 */
+  -moz-transform: translateY(20px);
+  /* Firefox */
+  -webkit-transform: translateY(20px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(20px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0011 .middle-cover:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  width: 90%;
+  height: 1px;
+  background: #fff;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0011 .middle-cover:after {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  width: 90%;
+  height: 1px;
+  margin-top: 1px;
+  background: #fff;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0011:hover .middle-cover:before {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(45deg);
+  /* Opera */
+  opacity: 0.6;
+}
+.pic-effect0011:hover .middle-cover:after {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  /* IE 9 */
+  -moz-transform: rotate(-45deg);
+  /* Firefox */
+  -webkit-transform: rotate(-45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-45deg);
+  /* Opera */
+  opacity: 0.6;
+}
+.pic-effect0011:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect0011:hover .middle-cover h2 {
+  -ms-transform: translate(0, -40px);
+  transform: translate3d(0, -40px, 0);
+  -webkit-transform: translate3d(0, -40px, 0);
+  -moz-transform: translate3d(0, -40px, 0);
+  -o-transform: translate(0, -40px);
+}
+.pic-effect0011:hover img {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect0011:hover .middle-cover p {
+  opacity: 1;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+/* ****************************图片特效12 */
+.pic-effect0012 .middle-cover {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+  text-align: left;
+}
+.pic-effect0012 .middle-cover:before {
+  content: "";
+  display: table;
+}
+.pic-effect0012 .middle-cover h2 {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 20%;
+}
+.pic-effect0012 .middle-cover p {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 65%;
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  /* IE 9 */
+  -moz-transform: translateY(-20px);
+  /* Firefox */
+  -webkit-transform: translateY(-20px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-20px);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0012 .middle-cover:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 15%;
+  width: 90%;
+  height: 30%;
+  border: 3px solid #fff;
+  transition: top 0.3s ease-out;
+  -moz-transition: top 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: top 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: top 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0012:hover .middle-cover:before {
+  top: 60%;
+}
+.pic-effect0012:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect0012:hover img {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect0012:hover .middle-cover p {
+  opacity: 1;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+/* ****************************图片特效13 */
+.pic-effect0013 .middle-cover {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+  text-align: left;
+}
+.pic-effect0013 .middle-cover h2 {
+  padding: 0;
+  position: absolute;
+  top: 70px;
+  width: 90%;
+  left: 5%;
+}
+.pic-effect0013 .middle-cover p {
+  padding: 0;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 140px;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  /* IE 9 */
+  -moz-transform: translateX(100%);
+  /* Firefox */
+  -webkit-transform: translateX(100%);
+  /* Safari 和 Chrome */
+  -o-transform: translateX(100%);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+  opacity: 0;
+}
+.pic-effect0013 .middle-cover:before {
+  content: "";
+  position: absolute;
+  right: 5%;
+  left: 5%;
+  height: 2px;
+  width: 90%;
+  top: 120px;
+  background: white;
+  transform-origin: left center;
+  -ms-transform-origin: left center;
+  /* IE 9 */
+  -webkit-transform-origin: left center;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: left center;
+  /* Firefox */
+  -o-transform-origin: left center;
+  /* Opera */
+  transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  /* IE 9 */
+  -moz-transform: scaleX(0);
+  /* Firefox */
+  -webkit-transform: scaleX(0);
+  /* Safari 和 Chrome */
+  -o-transform: scaleX(0);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0013:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect0013:hover .middle-cover p {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+  opacity: 1;
+}
+.pic-effect0013:hover .middle-cover:before {
+  transform-origin: left center;
+  -ms-transform-origin: left center;
+  /* IE 9 */
+  -webkit-transform-origin: left center;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: left center;
+  /* Firefox */
+  -o-transform-origin: left center;
+  /* Opera */
+  transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  /* IE 9 */
+  -moz-transform: scaleX(1);
+  /* Firefox */
+  -webkit-transform: scaleX(1);
+  /* Safari 和 Chrome */
+  -o-transform: scaleX(1);
+  /* Opera */
+}
+/* ****************************图片特效14 */
+.pic-effect0014 img {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0014 .middle-cover {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0014 .middle-cover h2 {
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  left: 10%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  /* IE 9 */
+  -moz-transform: translateY(-40px);
+  /* Firefox */
+  -webkit-transform: translateY(-40px);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-40px);
+  /* Opera */
+}
+.pic-effect0014 .middle-cover p {
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  left: 10%;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+}
+.pic-effect0014 .middle-cover:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 1px solid white;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -webkit-transform: scale(1.1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1.1);
+  /* Opera */
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0014:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect0014:hover .middle-cover p {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+  opacity: 1;
+}
+.pic-effect0014:hover .middle-cover:before {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+  opacity: 1;
+}
+.pic-effect0014:hover img {
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+}
+/* ****************************图片特效15 */
+.pic-effect0015 img {
+  width: 110%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateX(-9%);
+  -ms-transform: translateX(-9%);
+  /* IE 9 */
+  -moz-transform: translateX(-9%);
+  /* Firefox */
+  -webkit-transform: translateX(-9%);
+  /* Safari 和 Chrome */
+  -o-transform: translateX(-9%);
+  /* Opera */
+  transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0015 .middle-cover {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: background 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: background 0.3s ease-out;
+  /* Opera */
+  text-align: right;
+}
+.pic-effect0015 .middle-cover h2 {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: 10%;
+}
+.pic-effect0015 .middle-cover p {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  opacity: 0;
+  border-right: 1px solid #fff;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  /* IE 9 */
+  -moz-transform: translateX(-100%);
+  /* Firefox */
+  -webkit-transform: translateX(-100%);
+  /* Safari 和 Chrome */
+  -o-transform: translateX(-100%);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0015:hover img {
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+.pic-effect0015:hover .middle-cover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.pic-effect0015:hover .middle-cover p {
+  opacity: 1;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+/* ****************************图片特效16 */
+.pic-effect0016 .middle-cover {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.pic-effect0016 .middle-cover:before {
+  content: "";
+  display: table;
+}
+.pic-effect0016 .middle-cover h2 {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 5%;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  /* IE 9 */
+  -moz-transform: translateY(-50%);
+  /* Firefox */
+  -webkit-transform: translateY(-50%);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(-50%);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0016 .middle-cover p {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: 20px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0016 .middle-cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 75%);
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+  -ms-transform-origin: 50% 50% 0;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% 0;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% 0;
+  /* Firefox */
+  -o-transform-origin: 50% 50% 0;
+  /* Opera */
+  transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  /* IE 9 */
+  -moz-transform: translateY(50%);
+  /* Firefox */
+  -webkit-transform: translateY(50%);
+  /* Safari 和 Chrome */
+  -o-transform: translateY(50%);
+  /* Opera */
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s ease-out;
+  /* Opera */
+}
+.pic-effect0016:hover .middle-cover p {
+  opacity: 1;
+  -ms-transform: translate(0, -10px);
+  transform: translate3d(0, -10px, 0);
+  -webkit-transform: translate3d(0, -10px, 0);
+  -moz-transform: translate3d(0, -10px, 0);
+  -o-transform: translate(0, -10px);
+}
+.pic-effect0016:hover .middle-cover h2 {
+  -ms-transform: translate(0, -40px);
+  transform: translate3d(0, -40px, 0);
+  -webkit-transform: translate3d(0, -40px, 0);
+  -moz-transform: translate3d(0, -40px, 0);
+  -o-transform: translate(0, -40px);
+}
+.pic-effect0016:hover .middle-cover:before {
+  opacity: 1;
+  -ms-transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate(0, 0);
+}
+/* ****************************图片特效16 end*/

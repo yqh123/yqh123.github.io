@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>中国婚博会-EDM制作规范</title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script src="../js/jquery-1.9.1.js"></script>
+	<script src="../js/index.js"></script>
+</head>
+<body>
+	<!--公共顶部导航-->
+	<div class="weddingExpoFile-public-header">
+		<div class="header-nav">
+			<div class="navas">
+				<a href="./index.html" class="writee-color333">文档首页</a>
+				<a href="./needUnderstand.html" class="writee-color333">前言</a>
+				<a href="./backstageExplanation.html" class="writee-color333">后台操作讲解</a>
+				<a href="./standard.html" class="writee-color333">前端规范</a>
+				<a href="./cuttingPlate.html" class="writee-color333">商家切板教程</a>
+				<a href="./mailboxEDM.html" class="writee-color333 activeIn active">EDM制作规范</a>
+				<a href="./special.html" class="writee-color333">项目中的特殊效果</a>
+				<a href="./commonJs.html" class="writee-color333">项目常用JS效果</a>
+				<a href="../specialEffects/btn_collection/html/btn_doc.html" class="writee-color333">按钮特效合集</a>
+				<a href="../specialEffects/pic_collection/html/doc.html" class="writee-color333">图片特效合集</a>
+				<a href="./model.html" class="writee-color333">项目常用工具</a>
+				<a href="http://www.bootcss.com/p/lesscss/" class="writee-color333">Less教程</a>
+				<a href="./extend.html" class="writee-color333">扩展内容</a>
+			</div>
+		</div>
+	</div>
+	<!--end-->
+	
+	<!--二级页面公共头部-->
+	<div class="weddingExpoFile-public-info">
+		<div class="info-writte wrap">
+			<div class="info">
+				<h2>前言</h2>
+				<p>EDM专题页面是公司专题页面的另一种形式，是通过邮件发送出去的html页面，所以在抒写EDM页面时要遵循特定的抒写规范，在下面的内容中会很详细的介绍如何规范的抒写一个标注的EDM页面，最大限度的兼容常用的邮箱(这个页面可以最后看)。</p>
+			</div>
+			<i class="middle"></i>
+		</div>
+	</div>
+	<!--end-->
+	
+	<!--二级页面内容区域-->
+	<div class="weddingExpoFile-content-wrap">
+		<div class="weddingExpoFile-content wrap">
+			<div class="content-left">
+				<div class="page js-page-title" id="format">
+					<div class="title">
+						<i></i>
+						<h3>编码格式</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							1、HTML编码请使用utf-8。</br>
+							2、页面宽度请设定在600到800px以内，长度1024px以内。（公司目前采用640）。</br>
+							3、HTML代码在15KB以内（各个邮箱的收件标准不一样，如果超出15KB您的邮件很有可能会进入垃圾箱）。</br>
+							4、请使用table表格来布局，同一个&lt;td&gt;里只放一张图片， 如“&lt;td&gt;&lt;img src=&quot;photo.jpg&quot;&gt;&lt;/td&gt;”，所有的图片都要定义宽高，同一段文字放在同一&lt;td&gt;里。</br>
+							5、所有table标签都要加入：border="0" cellspacing="0" cellpadding="0" align="center" ， 让页面居中显示，并且相邻的table标签之间不会出现间隔。</br>
+							6、不可将word类文件直接转换为HTML格式，否则会造成编码不规范。</br>
+							7、不要使用外链的css样式定义文字和图片（外链的css样式在邮件里将不能被读取，所以发送出去的邮件因为没有链接到样式，将会使你的邮件内容样式丢失），正确的写法：“&lt;td style=&quot;font-family:arial;font-size:12px;color:black&quot;&gt;我是文字内容&lt;/td&gt;”。</br>
+							8、不使用flash、Java、JavaScript、frames、iframe、activeX以及DHTML，如果页面中的图片一定要动态的，请将flash文件转换成gif动画使用，但在outlook2007里，gif将不能正常显示，因为outlook2007限制gif动画。</br>
+							9、不要使用“&lt;table&gt;&lt;/table&gt;”以外的body、meta和html之类的标签，部分邮箱系统会把这些过滤掉。</br>
+							10、背景图片代码写法如下：“&lt;table background=&quot;background.gif&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;&lt;/table&gt;”，但请注意，outlook对背景图片不识别（这条目前可以忽略）。</br>
+							11、不要出现"onmouseover"、"onmouseout"，即使在&lt;td&gt;里设置了，发送到邮箱后也将被过滤，无法显示设定鼠标经过所显示的内容。</br>
+							12、标签内容不要为空，否则会被过滤掉此标签。</br>
+							13、font-family属性不能为空，否则会被QQ屏蔽为垃圾邮件。</br>
+							14、若邮件模板内侧边或者上下有空白间距，不要用 padding，必须得用标准的 td 来设定空白间距，否则会导致各个邮箱解析不同，比如设置上下间距“&lt;tr height=&quot;20&quot;&gt;&lt;/tr&gt;”。</br>
+							15、定义 line-height 的注意事项：需在块级元素里定义 line-height。如果 td 里有 p 标签，则 line-height 也必须在 p 中定义。无论是 td 还是 p，如果有超链接，则都必须在 a 标签里定义 line-height。如果只是在 td 或者 p 里面定义 line-height 的话，那 yahoo 邮箱将无法识别 a 里面的行高</br>
+							16、内联元素不要嵌套块级元素，否则会把块级元素抽离出来。</br>
+							17、........
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="writte">
+					<div class="title">
+						<i></i>
+						<h3>文字</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							1、邮件主题控制在18个字以内，避免使用特殊符号，容易产生乱码。</br>
+							2、邮件主题和内容都不要加入带有网站地址的信息，比如“xxx.com祝您新年好”。如果客户的品牌知名度比较高，主题可加入公司的名称，比如：“NIKE运动时尚”。</br>
+							3、文字内容，版面尽量简洁，突出主题，以达到更高的点击率。</br>
+							4、不使用类似如下敏感及带促销类的文字：免费、优惠、特惠、特价、低价、便宜、廉价、视频、赚钱、群发、发财、致富、代开、薪水、交友、支付、商机、法宝、宝典、秘密、情报、机密、保密、绝密、神秘、秘诀等。如果一定需要，请把敏感字做成图片。</br>
+							5、如果发送超过20万封，主题内容要更换，发送超过200万封，要考虑重新设计。</br>
+							6、文字应尽量定义字体的样式，每个邮箱的默认字体样式不同，为了达到您想要的效果，字体样式一定要定义完整。</br>
+							7、........
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="imgs">
+					<div class="title">
+						<i></i>
+						<h3>图片</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							1、图片地址请不要写成本地路径，例如：“&lt;img src=&quot;images/aa.jpg&quot;&gt;”这样发送出去的邮件，收件人将没办法看到您的图片）。</br>
+							2、图片名称不能含有ad字符，否则图片上传后会显示成“被过滤广告”。</br>
+							3、如果整个邮件模板只有一张图，一定要裁成2-3张小图，并适当保留一些文字。</br>
+							4、图片名称不能含有 ad 字符，否则图片上传后会显示成“被过滤广告”。</br>
+							5、如果整个邮件模板只有一张图，一定要裁成 2-3 张小图，并适当保留一些文字。</br>
+							6、图片的属性尽量定义完整，例如：“&lt;img src=&quot;images/1.jpg&quot; style=&quot;vertical-align:top;&quot; height=&quot;30&quot; width=&quot;100&quot; alt=&quot;&quot;&gt;” 这里的 style="vertical-align:top;" 一定要定义，否则图片之间会有缝隙、变形等显示异常的情况。</br>
+							7、在 img 标签里加上 alt 属性，这样用户在收到邮件的时候，即使有些邮箱将图片隐藏掉，也可以看到 alt 里面的内容。如：“&lt;img src=&quot;images/1.jpg&quot; style=&quot;vertical-align:top;&quot; height=&quot;30&quot; width=&quot;100&quot; alt=&quot;显示内容&quot;&gt;”，让客户了解到邮件内容并吸引客户点击显示图片。</br>
+							8、........
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="ahref">
+					<div class="title">
+						<i></i>
+						<h3>链接</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							1、链接请写成绝对地址。（以确保收信人在点击链接时能够正常浏览您的内容）。</br>
+							2、链接地址的长度不能超过255个字符，会导致无法追踪或链接错误。</br>
+							3、不要使用地图功能（map）链接图片，此功能会使邮件被多数邮箱划分为垃圾邮件。</br>
+							4、文字中出现网站地址链接被屏蔽为垃圾邮件的风险是极高的，例如：http://xxx.com此类链接，建议写成“XXX公司”文字加链接，或是将网址做成图片加链接。</br>
+							5、链接里面最好不要使用特殊符号，避免邮箱解析错误。</br>
+							6、链接代码应尽量简短，代码太长会增加模板大小，进而会影响邮件发送效果。</br>
+							7、........
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="publicModel">
+					<div class="title">
+						<i></i>
+						<h3>EDM页面模板</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							【简介】：公司在EDM页面制作的过程中，分为“常用模板”和“自定义模板”。</br>
+							【常用模板】：公司经常使用的EDM模板（在<a href="../html/model.html" target="_blank" class="ahref">"项目常用工具"</a>中有“EDM页面制作规范”文档里面有模版），目前只有“八大节EDM模版”，一般只需要跟顾问确认哪些模块需要使用，然后把其他不使用的模块在代码中删除即可，并且把图片和链接地址换掉，那这个EDM页面也就制作完成了。</br>
+							【自定义模板】：也就是根据设计稿重新制作新的EDM页面，其中公共头部和尾部基本不变，只需要按照EDM的制作规范制作即可，同时，在“EDM页面制作规范”文件夹里面有“EDM页面模板（自定义）”文件夹，里面已经写好了模板的html页面（包含头部和尾部），里面也有详细的注释。</br>
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="customModel">
+					<div class="title">
+						<i></i>
+						<h3>自定义EDM模板</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							<strong>【公共头部】：公司EDM页面的头部和尾部基本是固定的，只修改修改里面的某些地方的链接即可。</strong></br>
+							<img src="../images/weddingExpoFile-page-img48.png" class="imginfo"></br>
+							红框的文字和链接都是可以修改的，尤其是链接部分是根据不同城市填写的链接，比如：“http://<span class="spancolorhot">hz</span>.expo.jiehun.com.cn/<span class="spancolorhot">?ordersrc=shWeekly_gg_sy021901&amp;src=shWeekly_gg_sy021901&amp;uid=shWeekly</span>”。</br>
+							（1）“hz”就表示是杭州的EDM页面。</br>
+							（2） 整个EDM页面的所有链接部分最后都会加上“？.....”这个后台检测代码，完整链接是由顾问提供的，包含了监听代码，如果没有，就找对接顾问要。</br>
+						</p>
+						<p class="info">
+							<strong>【公共底部】：“查看更多商家”&amp;“点此退订”。</strong></br>
+							<img src="../images/weddingExpoFile-page-img49.png" class="imginfo">
+							（此处只需要修改“查看更多商家”链接的城市名缩写即可：http://城市名缩写.xxxxx）
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="seeModel">
+					<div class="title">
+						<i></i>
+						<h3>如何检查EDM页面</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							【简介】：你编写完成的本地EDM页面在本地浏览器看是检查不出问题的，所以我们要在特定邮箱里面去看你的EDM页面是否有问题（公司采用QQ邮箱），格式是否出错，图片链接是否出错等。</br>
+							【检查步骤】：</br>
+							（1）使用QQ邮箱“写信”功能，点击下图红框按钮。</br>
+							<div class="info-img">
+								<img src="../images/weddingExpoFile-page-img50.png">
+								<img src="../images/weddingExpoFile-page-img51.png">
+							</div>
+						</p>
+						<p class="info">
+							（2）右键你的EDM html页面，选择“记事本打开”，复制代码到“返回可视化编辑”内，然后点击“返回可视化编辑”，在QQ邮箱可视化框内，会像正常网页一样显示你的html页面（此时因为图片不是线上的而导致无法显示，这个没关系，只要保证页面布局不乱即可）。</br>
+							<div class="info-img">
+								<img src="../images/weddingExpoFile-page-img52.png">
+								<img src="../images/weddingExpoFile-page-img53.png">
+							</div>
+						</p>
+						<p class="info">
+							（3）你可以选择浏览器的“检查”功能，去查看你的样式哪里出了问题，和平时检测页面代码样式一样，然后把问题代码修改掉，直到没有问题为止。</br>
+							<img src="../images/weddingExpoFile-page-img54.png" class="imginfo">
+						</p>
+						<p class="info">
+							（4）将检测完成的EDM文件打包发送给对应的顾问即可。</br>
+							（5）之后你就可以上天了。</br>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="content-right js-page-wrap">
+				<i class="side"></i>
+				<a href="#format" class="apage js-pagesike active">编码格式</p>
+				<a href="#writte" class="apage js-pagesike">文字</p>
+				<a href="#imgs" class="apage js-pagesike">图片</p>
+				<a href="#ahref" class="apage js-pagesike">链接</p>
+				<a href="#publicModel" class="apage js-pagesike">EDM页面模板</p>
+				<a href="#customModel" class="apage js-pagesike">自定义EDM模板</p>
+				<a href="#seeModel" class="apage js-pagesike">如何检查EDM页面</p>
+				<a href="javascript:void(0);" class="apage js-scrollTop">返回顶部</a>
+			</div>
+		</div>
+	</div>
+	<!--end-->
+</body>
+</html>

@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+/*-----------------------------------清除默认样式-------------------------------------------*/
+	*{ margin:0; padding: 0; list-style-type: none;}
+	i,b,em,strong{ font-style: normal;}
+	img{ 
+		display: block;
+		border:none; 
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-image: url(http://2.tthunbohui.cn/zhuanti/10809/YQH-imgBj-logo.png);
+		background-size: 20% auto;
+	}
+	.clear-A{
+		text-decoration:none;
+		color:#333;
+	}
+/*---------------------------------------end------------------------------------------------*/
+
+/*-------------------------------------公共样式---------------------------------------------*/
+	.wrap{ width:15rem; margin:0 auto;} 
+	.clearfix{
+		&:after{
+			content:'';
+			display:block;
+			clear:both;
+		}
+	}
+	body{
+		font-family:"微软雅黑" !important;	
+		color:#333;
+		font-size: 40px;
+		background-color: #fff;
+	    -webkit-font-smoothing:antialiased;
+	}
+	.box-sizing(@type:border-box){
+		box-sizing:@type;
+		-moz-box-sizing:@type; /* Firefox */
+		-webkit-box-sizing:@type; /* Safari */
+	}
+	.transition(@property:all,@duration:1s,@timing:ease-out){
+		transition: @property @duration @timing;
+		-moz-transition: @property @duration @timing; /* Firefox 4 */
+		-webkit-transition: @property @duration @timing; /* Safari 和 Chrome */
+		-o-transition: @property @duration @timing; /* Opera */
+	}
+	.transition1(@value){
+		transition: @value;
+		-moz-transition:@value; /* Firefox 4 */
+		-webkit-transition: @value; /* Safari 和 Chrome */
+		-o-transition: @value; /* Opera */
+	}
+	.transform(@value,@origin:50% 50% 0){
+		transform-origin:@origin;
+		-ms-transform-origin:@origin; 		/* IE 9 */
+		-webkit-transform-origin:@origin;	/* Safari 和 Chrome */
+		-moz-transform-origin:@origin;		/* Firefox */
+		-o-transform-origin:@origin;		/* Opera */
+
+		transform:@value;
+		-ms-transform:@value; 		/* IE 9 */
+		-moz-transform:@value; 		/* Firefox */
+		-webkit-transform:@value; 	/* Safari 和 Chrome */
+		-o-transform:@value; 		/* Opera */
+	}
+	.translate(@x,@y:0){
+		-ms-transform:translate(@x,@y);
+		transform:translate3d(@x,@y,0);
+		-webkit-transform:translate3d(@x,@y,0);
+		-moz-transform:translate3d(@x,@y,0);
+		-o-transform:translate(@x,@y);
+	}
+	.ellipsis{
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+	.middle{
+		&:before{
+			content:"";
+			display:inline-block;
+			height:100%;
+			vertical-align:middle;
+			font-size:0;
+		}
+	}
+	.marginfix{
+		&:before{
+			content:"";
+			display: table;
+		}
+	}
+		/* *******************************背景图设置mixin */
+	.bg(@url,@position:center){
+		background:@url no-repeat @position;
+	}
+	/* ******************************end */
+
+	.z-index(@index:1){
+		position:relative;
+		z-index:@index;
+	}
+	/* *************************鼠标移入wayra效果mixin */
+	.wayra(@width,@height,@bg-hover,@bg:none,@duration:200ms,@easing:ease-out){
+		position:relative;
+		width:@width;
+		height:@height;
+		line-height: @height;
+		overflow:hidden;
+		text-align:center;
+		position:relative;
+		background:@bg;
+		.hover-bg{
+			position:absolute;
+			bottom:0;
+			left:-@height;
+			width:@height;
+			height:@width;//弦长
+			background:@bg-hover;
+			transform-origin:right bottom 0;
+			// transform:rotate(0);
+			transition:transform @duration @easing;
+
+		}
+		a{
+			display: block;
+			height:100%;
+		}
+		&:hover .hover-bg{
+			transform-origin:right bottom 0;
+			transform:rotate(90deg);
+		}
+	}
+
+	.weddingExpoFile-public-header{
+		width: 100%;
+		background: #fff;
+		box-sizing: border-box;
+		font-family: "微软雅黑";
+		.header-nav{
+			.clearfix;
+			height: 100%;
+			padding: 0 10px;
+		}
+		.navas{
+			float: left;
+			font-size: 0;
+			a{
+				display: inline-block;
+				padding: 0 10px;
+				font-size: 14px;
+				color: #563d7c;
+				height: 42px;
+				text-decoration: none;
+				line-height: 42px;
+			}
+			.active{
+				color: #463265;
+	   	 		background-color: #ececec;
+			}
+			.activeIn{
+				color: #463265;
+	   	 		background-color: #ececec;
+			}
+		}
+	}
+	/* *******************************end */
+/*---------------------------------------end------------------------------------------------*/
