@@ -57,7 +57,7 @@
 						<p class="info">
 							1、HTML编码请使用utf-8。</br>
 							2、页面宽度请设定在600到800px以内，长度1024px以内。（公司目前采用640）。</br>
-							3、HTML代码在15KB以内（各个邮箱的收件标准不一样，如果超出15KB您的邮件很有可能会进入垃圾箱）。</br>
+							3、HTML代码中字符占据整体比例要大于图片比例，否则会被认定为无意义邮件转入垃圾箱；一个EDM邮件总容积要控制在3M以内，否则你的邮件可能因为容积的限制发送不出去。</br>
 							4、请使用table表格来布局，同一个&lt;td&gt;里只放一张图片， 如“&lt;td&gt;&lt;img src=&quot;photo.jpg&quot;&gt;&lt;/td&gt;”，所有的图片都要定义宽高，同一段文字放在同一&lt;td&gt;里。</br>
 							5、所有table标签都要加入：border="0" cellspacing="0" cellpadding="0" align="center" ， 让页面居中显示，并且相邻的table标签之间不会出现间隔。</br>
 							6、不可将word类文件直接转换为HTML格式，否则会造成编码不规范。</br>
@@ -68,7 +68,7 @@
 							11、不要出现"onmouseover"、"onmouseout"，即使在&lt;td&gt;里设置了，发送到邮箱后也将被过滤，无法显示设定鼠标经过所显示的内容。</br>
 							12、标签内容不要为空，否则会被过滤掉此标签。</br>
 							13、font-family属性不能为空，否则会被QQ屏蔽为垃圾邮件。</br>
-							14、若邮件模板内侧边或者上下有空白间距，不要用 padding，必须得用标准的 td 来设定空白间距，否则会导致各个邮箱解析不同，比如设置上下间距“&lt;tr height=&quot;20&quot;&gt;&lt;/tr&gt;”。</br>
+							14、若邮件模板内侧边或者上下有空白间距，不要用 padding，必须得用标准的 td 来设定空白间距，否则会导致各个邮箱解析不同，比如设置上下间距“&lt;tr padding=&quot;20 0&quot;&gt;&lt;/tr&gt;”。</br>
 							15、定义 line-height 的注意事项：需在块级元素里定义 line-height。如果 td 里有 p 标签，则 line-height 也必须在 p 中定义。无论是 td 还是 p，如果有超链接，则都必须在 a 标签里定义 line-height。如果只是在 td 或者 p 里面定义 line-height 的话，那 yahoo 邮箱将无法识别 a 里面的行高</br>
 							16、内联元素不要嵌套块级元素，否则会把块级元素抽离出来。</br>
 							17、........
@@ -99,14 +99,13 @@
 					</div>
 					<div class="content">
 						<p class="info">
-							1、图片地址请不要写成本地路径，例如：“&lt;img src=&quot;images/aa.jpg&quot;&gt;”这样发送出去的邮件，收件人将没办法看到您的图片）。</br>
-							2、图片名称不能含有ad字符，否则图片上传后会显示成“被过滤广告”。</br>
-							3、如果整个邮件模板只有一张图，一定要裁成2-3张小图，并适当保留一些文字。</br>
-							4、图片名称不能含有 ad 字符，否则图片上传后会显示成“被过滤广告”。</br>
-							5、如果整个邮件模板只有一张图，一定要裁成 2-3 张小图，并适当保留一些文字。</br>
-							6、图片的属性尽量定义完整，例如：“&lt;img src=&quot;images/1.jpg&quot; style=&quot;vertical-align:top;&quot; height=&quot;30&quot; width=&quot;100&quot; alt=&quot;&quot;&gt;” 这里的 style="vertical-align:top;" 一定要定义，否则图片之间会有缝隙、变形等显示异常的情况。</br>
-							7、在 img 标签里加上 alt 属性，这样用户在收到邮件的时候，即使有些邮箱将图片隐藏掉，也可以看到 alt 里面的内容。如：“&lt;img src=&quot;images/1.jpg&quot; style=&quot;vertical-align:top;&quot; height=&quot;30&quot; width=&quot;100&quot; alt=&quot;显示内容&quot;&gt;”，让客户了解到邮件内容并吸引客户点击显示图片。</br>
-							8、........
+							1、图片名称不能含有ad字符，否则图片上传后会显示成“被过滤广告”。</br>
+							2、如果整个邮件模板只有一张图，一定要裁成2-3张小图，并适当保留一些文字。</br>
+							3、图片名称不能含有 ad 字符，否则图片上传后会显示成“被过滤广告”。</br>
+							4、如果整个邮件模板只有一张图，一定要裁成 2-3 张小图，并适当保留一些文字。</br>
+							5、图片的属性尽量定义完整，例如：“&lt;img src=&quot;images/1.jpg&quot; style=&quot;vertical-align:top;&quot; height=&quot;30&quot; width=&quot;100&quot; alt=&quot;&quot;&gt;” 这里的 style="vertical-align:top;" 一定要定义，否则图片之间会有缝隙、变形等显示异常的情况。</br>
+							6、在 img 标签里加上 alt 属性，这样用户在收到邮件的时候，即使有些邮箱将图片隐藏掉，也可以看到 alt 里面的内容。如：“&lt;img src=&quot;images/1.jpg&quot; style=&quot;vertical-align:top;&quot; height=&quot;30&quot; width=&quot;100&quot; alt=&quot;显示内容&quot;&gt;”，让客户了解到邮件内容并吸引客户点击显示图片。</br>
+							7、........
 						</p>
 					</div>
 				</div>
