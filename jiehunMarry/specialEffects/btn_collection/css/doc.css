@@ -130,7 +130,7 @@ code {
   line-height: 20px;
 }
 body {
-  background: #fff;
+  background: #fff !important;
 }
 .cp {
   color: #099;

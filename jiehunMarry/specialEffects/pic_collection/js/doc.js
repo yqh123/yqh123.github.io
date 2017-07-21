@@ -4,10 +4,7 @@ $(function(){
 	YD.creatSidenav($(".page-header"),$(".bs-docs-sidenav"));
 
 	// 确定侧边导航位置
-	YD.changePosition();
-	$(window).scroll(function(){
-	  YD.changePosition();
-	})
+	YD.dynamicPosition($(".bs-docs-container"));
 
 	// 滚动到不同位置，高亮侧边导航对应主题
 	YD.scrollChange($(".page-header"),$(".bs-docs-sidenav li"));
@@ -80,8 +77,17 @@ YD.scrollChange=function(section,sidenav){
 }
 
 // 侧边导航位置
-YD.changePosition=function(){
-  if($(window).scrollTop()<256){
+YD.dynamicPosition=function(el){
+	var y=el.offset().top;
+	console.log(y);
+	YD.changePosition(y);
+	$(window).scroll(function(){
+	  YD.changePosition(y);
+	})
+}
+
+YD.changePosition=function(y){
+  if($(window).scrollTop()<y){
     $(".affix").css({"position":"absolute"});
   }else{
     $(".affix").css({"position":"fixed","top":"0"});
