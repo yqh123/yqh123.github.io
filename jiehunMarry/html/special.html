@@ -712,6 +712,80 @@ $(&quot;.count span&quot;).html(&quot;按预算：&quot;);
 						</p>
 					</div>
 				</div>
+				<div class="page js-page-title" id="recommend">
+					<div class="title">
+						<i></i>
+						<h3>好友推荐</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							【介绍】：“好友推荐”的意思为公司新/老会员通过推荐的方式让他们的朋友索票后来参加公司举办的展会，凡事推荐成功后，推荐人和被推荐人都可以享受到公司提供的奖励政策。推荐人只需要在页面上输入他索票时的手机号或邮箱，验证通过后就可以生成一个索票页面的链接，推荐人只需要把链接发给他的朋友即可，等他的朋友索票成功后，双方即可享受相应的奖励政策。
+							<img src="../images/weddingExpoFile-page-img80.png" class="imginfo">
+						</p>
+						<p class="info">
+							<span class="spancolor">【实现代码】：pc端+wap端</span></br>
+							<textarea name="" class="textarea-code" style="height: 910px;">
+【html】：以页面id=friendRecommendation元素为例
+&lt;iframe id=&quot;friendRecommendation&quot; src=&quot;/m/expo/laotuixin/step1&quot; style=&quot;width:100%; border:0;&quot;&gt;&lt;/iframe&gt;
+
+【js】：注意里面的注释部分，主要是修改input框和点击按钮等区域的代码
+var element = $(&quot;#friendRecommendation&quot;);
+element.load(function(){
+
+	// 修改弹窗里面的部分样式
+	element.contents().find(&quot;#getcode&quot;).click(function(){
+	    $(&quot;.red&quot;).animate({width:&quot;396px&quot;},1500)
+	    $(&quot;.attr h4,.attr span,.attr p&quot;).css({&quot;color&quot;:&quot;#666&quot;})
+	    $(&quot;.attr2 h4,.attr2 span,.attr2 p&quot;).css({&quot;color&quot;:&quot;#ff0022&quot;})
+	})
+
+	// 注意有疑问请致电021-60677999 这个电话每个城市不一样，需要确认
+	element.contents().find(&quot;.sorry p&quot;).html(&quot;很抱歉，您还没有资格参与活动，有疑问请致电021-60677999&quot;);
+	element.contents().find(&quot;.sorry p&quot;).css({&quot;color&quot;:&quot;black&quot;});
+	element.contents().find(&quot;.sorry&quot;).css({&quot;background&quot;:&quot;#F2F1F1&quot;});
+	element.contents().find(&quot;#sms_tips&quot;).css({&quot;color&quot;:&quot;black&quot;});
+	element.contents().find(&quot;.zt_box&quot;).css({&quot;background&quot;:&quot;#f3f2f2&quot;,&#x27;border&#x27;:&#x27;0&#x27;});
+	element.contents().find(&quot;#getcode&quot;).val(&quot;生成【专属邀请链接】&quot;);
+	element.contents().find(&quot;#phone_email&quot;). attr(&quot;placeholder&quot;,&quot;请输入您索票时的手机号或邮箱进行验证&quot;);
+	element.contents().find(&quot;#getcode&quot;).css({&quot;background&quot;:&quot;#fa3a5d&quot;,&#x27;width&#x27;:&#x27;6.6rem&#x27;});
+
+	// 修改点击【专属邀请链接】按钮样式
+	element.contents().find(&quot;#getcode&quot;).css({
+		&#x27;width&#x27;:&quot;100%&quot;,
+		&#x27;max-width&#x27;:&#x27;none&#x27;,
+		&#x27;height&#x27;:&#x27;3.4rem&#x27;,
+		&#x27;padding&#x27;:0,
+		&#x27;color&#x27;:&#x27;#fff&#x27;,
+		&#x27;font-weight&#x27;:&#x27;bold&#x27;,
+		&#x27;background&#x27;:&#x27;red
+	});
+
+	// 修改点击input输入框样式
+	element.contents().find(&quot;#phone_email&quot;).css({
+		&#x27;width&#x27;:&quot;100%&quot;,
+		&#x27;font-size&#x27;:&#x27;1rem&#x27;,
+		&#x27;color&#x27;:&#x27;#363636&#x27;,
+		&#x27;font-weight&#x27;:&#x27;bold&#x27;,
+		&#x27;border&#x27;:&quot;0.1rem solid #fff&quot;,
+		&#x27;background&#x27;:&#x27;#ffe39d&#x27;,
+		&#x27;border-radius&#x27;:&#x27;2rem&#x27;,
+		&#x27;text-indent&#x27;:&#x27;9%&#x27;
+	});
+
+	// 修改iframe的背景色
+	element.contents().find(&#x27;#getform&#x27;).css({
+		&#x27;background&#x27;:&#x27;#ffc73b&#x27;
+	})
+});
+							</textarea>
+						</p>
+						<p class="info">
+							<span class="spancolor">【注意事项】：</span></br>
+							（1）获取iframe里面的页面元素可以用：iframe元素.contents().find("子元素") 的方式</br>
+							（2）以上js部分代码要在页面body里面的内容加载完成后在执行，你可以直接写在body最下面</br>
+						</p>
+					</div>
+				</div>
 				<div class="page js-page-title" id="theTicket">
 					<div class="title">
 						<i></i>
@@ -830,6 +904,7 @@ function timerSetup(){
 				<a href="#weddingfairCollarcoupons" class="apage js-pagesike">预约到婚博会并领劵</a>
 				<a href="#weddingfairShop" class="apage js-pagesike">预约到店并领劵</a>
 				<a href="#consultation" class="apage js-pagesike">客咨功能</a>
+				<a href="#recommend" class="apage js-pagesike">好友推荐</a>
 				<a href="#theTicket" class="apage js-pagesike">展会索票</a>
 				<a href="#general" class="apage js-pagesike">展会换届</a>
 				<a href="javascript:void(0);" class="apage js-scrollTop">返回顶部</a>
