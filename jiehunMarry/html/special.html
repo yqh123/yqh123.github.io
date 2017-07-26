@@ -724,7 +724,7 @@ $(&quot;.count span&quot;).html(&quot;按预算：&quot;);
 						</p>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端+wap端</span></br>
-							<textarea name="" class="textarea-code" style="height: 910px;">
+							<textarea name="" class="textarea-code" style="height: 1000px;">
 【html】：以页面id=friendRecommendation元素为例
 &lt;iframe id=&quot;friendRecommendation&quot; src=&quot;/m/expo/laotuixin/step1&quot; style=&quot;width:100%; border:0;&quot;&gt;&lt;/iframe&gt;
 
@@ -772,6 +772,10 @@ element.load(function(){
 		&#x27;text-indent&#x27;:&#x27;9%&#x27;
 	});
 
+	// 修改input placeholder字体颜色
+	var style=element.contents().find(&quot;head style&quot;).html()+&quot;::-webkit-input-placeholder {color:#363636;}:-moz-placeholder { color:#363636;}::-moz-placeholder {color:#363636;}:-ms-input-placeholder {color:#363636;}&quot;;
+	element.contents().find(&quot;head style&quot;).html(style);
+
 	// 修改iframe的背景色
 	element.contents().find(&#x27;#getform&#x27;).css({
 		&#x27;background&#x27;:&#x27;#ffc73b&#x27;
@@ -783,6 +787,7 @@ element.load(function(){
 							<span class="spancolor">【注意事项】：</span></br>
 							（1）获取iframe里面的页面元素可以用：iframe元素.contents().find("子元素") 的方式</br>
 							（2）以上js部分代码要在页面body里面的内容加载完成后在执行，你可以直接写在body最下面</br>
+							（3）我们可以使用公司的测试手机号码：18888888888 去测试所有需要输入手机号码进行验证的特殊特效</br>
 						</p>
 					</div>
 				</div>
