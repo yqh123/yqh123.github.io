@@ -256,6 +256,7 @@ body {
 }
 .weddingExpoFile-content-wrap .content-left .content .spancolor {
   color: #6978e4;
+  line-height: 32px;
 }
 .weddingExpoFile-content-wrap .content-left .content .spancolorhot {
   color: red;
