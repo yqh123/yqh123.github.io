@@ -231,15 +231,15 @@ $(&#x27;.flexslider&#x27;).flexslider({
 						</p>
 					</div>
 				</div>
-				<!-- PC3D轮播图 -->
+				<!-- 3D轮播图 -->
 				<div class="page js-page-title" id="threed-carousel">
 					<div class="title">
 						<i></i>
-						<h3>PC3D轮播图</h3>
+						<h3>3D轮播图</h3>
 					</div>
 					<div class="content">
 						<p class="info">
-							这是一个有空间感的轮播图，通过CSS3的transform和transition实现，因此不兼容IE9及以下（包括IE9）版本。目前的主要功能有自动轮播、点击左右图片向左向右切换和移动端的手指滑动切换。
+							这是一个有空间感的轮播图，通过CSS3的transform和transition实现，因此IE8下切换时无过渡动画。目前的主要功能有自动轮播、点击左右图片向左向右切换、点击导航切换和移动端的手指滑动切换。pc与wap通用。
 						</p>
 						<h3 class="threed-h3">调用</h3>
 						<p>调用的时候需要拷贝四块内容：<strong class="threed-strong">js核心代码、js调用代码、HTML结构和CSS样式。</strong></p>
@@ -254,7 +254,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									<li><img src="../images/carosel (3).jpg" alt=""></li>
 									<li><img src="../images/carosel (4).jpg" alt=""></li>
 								</ul>
-								<ul class="control-dot"></ul>
+								<ul class="carosel-nav"></ul>
 							</div>
 						</div>
 						<h3 class="threed-h3">几点说明</h3>
@@ -270,13 +270,13 @@ $(&#x27;.flexslider&#x27;).flexslider({
 												<li><img src="../images/carosel (3).jpg" alt=""></li>
 												<li><img src="../images/carosel (4).jpg" alt=""></li>
 											</ul>
-											<ul class="control-dot"></ul>
+											<ul class="carosel-nav"></ul>
 										</div>
 									</li>
 								</ul>
 							</li>
 							<li><strong class="threed-strong">多个轮播图：</strong>一个页面可包含多个此类轮播图而不会相互影响，第一个调用成功后，若要增加，只需复制html结构即可。</li>
-							<li><strong class="threed-strong">参数配置：</strong>在调用js代码中，除了图片的宽高需要根据实际的设计效果规定外，你可以修改其它参数定制自己想要的效果，如动画速度，自动滑动间隔时长（注意：间隔时长应该大于动画速度）、焦点图和非焦点图的前后距离、左右图片移出的距离等~</li>
+							<li><strong class="threed-strong">参数配置：</strong>在调用js代码中，除了图片的宽高需要根据实际的设计效果规定外，你可以修改其它参数定制自己想要的效果，如动画速度，自动滑动间隔时长（注意：间隔时长应该大于动画速度）、左右图片移出的距离等~</li>
 							<li><strong class="threed-strong">关于单位px/rem：</strong>轮播图在移动端使用的时候，图片的宽高等尺寸有响应式的要求，这时候可以把配置参数里的单位“px”改为“rem”来适配。</li>
 						</ol>
 						<p class="info">
@@ -285,66 +285,92 @@ $(&#x27;.flexslider&#x27;).flexslider({
 								<span class="tooltip">复制成功~</span>
 							</div>
 							<textarea class="threed-carosel-js">
-							/**********************PC3D轮播图************************/
+							/**********************3D轮播图************************/
 							var YD={};
 							YD.threeDCarosel={
 								defaults:{
-									picWidth:&quot;300px&quot;,
-									picHeight:&quot;300px&quot;,
-									focusDepth:&quot;200px&quot;,
-									backEleOffset:&quot;300px&quot;,
-									perspective:&quot;800px&quot;,
+									picWidth:400,
+									picHeight:400,
+									offset:200,
+									unit:&quot;px&quot;,
+									scale:0.8,
 									speed:300,
 									duration:2000,
 									autoSlide:true,
 									touchSlide:true,
 									hoverPause:true,
-									clickTurnover:true,
+									clickSlide:true,
 								},
 								caroselBox:{},
 								index:[],
 								caroselLens:[],
 								timer:[],
-								liTransform:{},
-								leftTransform:{},
-								rightTransform:{},
-								targetTransform:{},
+								ie8Style:{},
+								stdStyle:{},
+								isIE8:!$.support.leadingWhitespace,
 
 								// 初始化
 								init:function(settings){
+									// 应用自定义设置
+									for(var key in settings){
+										this.defaults[key]=settings[key];
+									}
+
 									var that=this;
 									var url=window.location.href;
 									var isPC=!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i);
-
-									// 应用自定义设置
-									for(var key in settings){
-										that.defaults[key]=settings[key];
-									}
+									var picWidth=that.defaults.picWidth;
+									var picHeight=that.defaults.picHeight;
+									var scale=that.defaults.scale;
+									var offset=that.defaults.offset;
+									var unit=that.defaults.unit;
+									var ie8Style=that.ie8Style;
+									var stdStyle=that.stdStyle;
 
 									// 获取轮播图
 									that.caroselBox=$(&quot;.threeD-carosel-box&quot;);
 
 									// 设置宽高
 									that.caroselBox.css({
-										&quot;width&quot;:that.defaults.picWidth+&quot;&quot;,
-										&quot;height&quot;:that.defaults.picHeight+&quot;&quot;,
+										&quot;width&quot;:picWidth+offset*scale*2+unit,
+										&quot;height&quot;:picHeight+unit,
 									});
-									that.caroselBox.find($(&quot;.threeD-carosel li img&quot;)).css({
-										&quot;width&quot;:that.defaults.picWidth+&quot;&quot;,
-										&quot;height&quot;:that.defaults.picHeight+&quot;&quot;,
+									that.caroselBox.children(&quot;.threeD-carosel&quot;).css({
+										&quot;width&quot;:picWidth+unit,
+										&quot;height&quot;:picHeight+unit,
+									});
+									that.caroselBox.find(&quot;.threeD-carosel li img&quot;).css({
+										&quot;width&quot;:picWidth+unit,
+										&quot;height&quot;:picHeight+unit,
 									});
 
 									// 编辑模式下，无轮播效果
 									if( url.indexOf(&#x27;static_edit&#x27;) !=-1 ){
-										that.caroselBox.find($(&quot;.threeD-carosel li&quot;)).css({&quot;position&quot;:&quot;static&quot;});
+										that.caroselBox.find(&quot;.threeD-carosel li&quot;).css({&quot;position&quot;:&quot;static&quot;});
 										that.caroselBox.css({
 											&quot;overflow-x&quot;:&quot;hidden&quot;,
 											&quot;overflow-y&quot;:&quot;scroll&quot;
 										})
 									}else{
 										// 修正编辑模式的影响
-										that.caroselBox.find($(&quot;.threeD-carosel li&quot;)).css({&quot;position&quot;:&quot;absolute&quot;});
+										that.caroselBox.find(&quot;.threeD-carosel li&quot;).css({&quot;position&quot;:&quot;absolute&quot;});
 										that.caroselBox.css({&quot;overflow&quot;:&quot;visible&quot;})
+
+										// IE8_CSS
+										ie8Style.liCss={&quot;width&quot;:scale*100+&quot;%&quot;,&quot;height&quot;:scale*100+&quot;%&quot;,&quot;margin&quot;:0,&quot;top&quot;:0};
+										ie8Style.leftCss={&quot;width&quot;:scale*100+&quot;%&quot;,&quot;height&quot;:scale*100+&quot;%&quot;,&quot;top&quot;:(1-scale)/2*100+&quot;%&quot;,&quot;left&quot;:0,&quot;right&quot;:&quot;auto&quot;,&quot;margin-left&quot;:-offset+unit};
+										ie8Style.rightCss={&quot;width&quot;:scale*100+&quot;%&quot;,&quot;height&quot;:scale*100+&quot;%&quot;,&quot;top&quot;:(1-scale)/2*100+&quot;%&quot;,&quot;left&quot;:&quot;auto&quot;,&quot;right&quot;:0,&quot;margin-right&quot;:-offset+unit};
+										ie8Style.targetCss={&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;,&quot;margin&quot;:0,&quot;top&quot;:0};
+
+										// 其他浏览器_CSS
+										var liTransition=addPrefix(&quot;transition&quot;,&quot;transform &quot;+that.defaults.speed+&quot;ms ease-out&quot;,[&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
+										var liTransform=addPrefix(&quot;transform&quot;,&quot;translate3d(0, 0,0) scale(&quot;+scale+&quot;)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
+
+										stdStyle.liCss=joinJSON([liTransform,liTransition]);
+
+										stdStyle.leftCss=addPrefix(&quot;transform&quot;,&quot;translate3d(-&quot;+offset+unit+&quot;, 0, 0) scale(&quot;+scale+&quot;)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
+										stdStyle.rightCss=addPrefix(&quot;transform&quot;,&quot;translate3d(&quot;+offset+unit+&quot;, 0, 0) scale(&quot;+scale+&quot;)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
+										stdStyle.targetCss=addPrefix(&quot;transform&quot;,&quot;translate3d(0,0,0) scale(1)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
 
 										// 添加css前缀
 										function addPrefix(prop,value,prefixs){
@@ -365,24 +391,13 @@ $(&#x27;.flexslider&#x27;).flexslider({
 											jsonStr=jsonStr.replace(&quot;}{&quot;,&quot;,&quot;);
 											return JSON.parse(jsonStr);
 										}
-
-										// 添加css前缀
-										var liTransition=addPrefix(&quot;transition&quot;,&quot;transform &quot;+that.defaults.speed+&quot;ms ease-out&quot;,[&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
-										that.liTransform=addPrefix(&quot;transform&quot;,&quot;translate3d(0, 0, -&quot;+that.defaults.focusDepth+&quot;)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
-
-										var liCss=joinJSON([that.liTransform,liTransition]);
-
-										that.leftTransform=addPrefix(&quot;transform&quot;,&quot;translate3d(-&quot;+that.defaults.backEleOffset+&quot;, 0, -&quot;+that.defaults.focusDepth+&quot;)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
-										that.rightTransform=addPrefix(&quot;transform&quot;,&quot;translate3d(&quot;+that.defaults.backEleOffset+&quot;, 0, -&quot;+that.defaults.focusDepth+&quot;)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
-										that.targetTransform=addPrefix(&quot;transform&quot;,&quot;translate3d(0,0,0)&quot;,[&quot;-ms-&quot;,&quot;-moz-&quot;,&quot;-webkit-&quot;,&quot;-o-&quot;]);
-
-
+										
 										// 初始样式
-										that.caroselBox.find($(&quot;.threeD-carosel&quot;)).css({
-											&quot;perspective&quot;:that.defaults.perspective
-										});
-
-										that.caroselBox.find($(&quot;.threeD-carosel li&quot;)).css(liCss);
+										if(that.isIE8){
+											that.caroselBox.find(&quot;.threeD-carosel li&quot;).css(ie8Style.liCss);
+										}else{
+											that.caroselBox.find(&quot;.threeD-carosel li&quot;).css(stdStyle.liCss);
+										}
 
 										// 启动所有轮播图
 										this.caroselBox.each(function(i){
@@ -395,26 +410,32 @@ $(&#x27;.flexslider&#x27;).flexslider({
 											that.index.push(0);
 
 											// 添加初始样式
-											lis.eq(0).addClass(&#x27;target&#x27;).css(that.targetTransform);
-											lis.eq(1).addClass(&#x27;right&#x27;).css(that.rightTransform);
-											lis.eq(lis.length-1).addClass(&#x27;left&#x27;).css(that.leftTransform);
-											that.caroselLens.push(lis.length);
-
-											// 触摸滑动
-											if(that.defaults.touchSlide){
-												that.touchSlide(caroselBox);
+											if(that.isIE8){
+												lis.eq(0).addClass(&#x27;target&#x27;).css(ie8Style.targetCss);
+												lis.eq(1).addClass(&#x27;right&#x27;).css(ie8Style.rightCss);
+												lis.eq(lis.length-1).addClass(&#x27;left&#x27;).css(ie8Style.leftCss);
+											}else{
+												lis.eq(0).addClass(&#x27;target&#x27;).css(stdStyle.targetCss);
+												lis.eq(1).addClass(&#x27;right&#x27;).css(stdStyle.rightCss);
+												lis.eq(lis.length-1).addClass(&#x27;left&#x27;).css(stdStyle.leftCss);
 											}
 											
-
-
+											that.caroselLens.push(lis.length);
+											
 											// 添加控制点
 											for(var i=0;i&lt;lis.length;i++){
 												i==0?dotHtml.push(&quot;&lt;li class=&#x27;selected&#x27;&gt;&lt;/li&gt;&quot;):dotHtml.push(&quot;&lt;li&gt;&lt;/li&gt;&quot;);
 											}
-											$(this).children(&quot;.control-dot&quot;).html(dotHtml.join(&quot;&quot;));
+											$(this).children(&quot;.carosel-nav&quot;).html(dotHtml.join(&quot;&quot;));
+
+											// 自动轮播
+											if(that.defaults.autoSlide){
+												timer=setTimeout(function(){that.autoSlide(caroselBox)},that.defaults.duration);
+												that.timer.push(timer);
+											}
 
 											// 绑定点击事件
-											if(that.defaults.clickTurnover){
+											if(that.defaults.clickSlide){
 												$(this).find(&quot;.threeD-carosel .left&quot;).click(function(){
 													that.slideRight(caroselBox);
 												});
@@ -422,14 +443,16 @@ $(&#x27;.flexslider&#x27;).flexslider({
 													that.slideLeft(caroselBox);
 												});
 											}
-											
 
-											// 自动轮播
-											if(that.defaults.autoSlide){
-												timer=setTimeout(function(){that.autoSlide(caroselBox)},that.defaults.duration);
-												that.timer.push(timer);
+											// 触摸滑动
+											if(that.defaults.touchSlide&amp;&amp;(!isPC)){
+												that.touchSlide(caroselBox);
 											}
-											
+
+											// 导航切换
+											if(that.defaults.navSlide){
+												that.navSlide(caroselBox);
+											}
 										})
 
 										// PC端鼠标移入暂停自动轮播 
@@ -448,19 +471,31 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									var that=YD.threeDCarosel;
 									var carosel=caroselBox.children(&quot;.threeD-carosel&quot;);
 									var i=that.caroselBox.index(caroselBox);
+									var addLeftCss;
 
 									// 解绑旧元素click事件
 									that.offClick(caroselBox);
 
-									// 切换主体
-									carosel.children(&quot;.right&quot;).removeClass(&quot;right&quot;).css(that.liTransform);
-									carosel.children(&quot;.target&quot;).addClass(&quot;right&quot;).removeClass(&quot;target&quot;).css(that.rightTransform);
-									carosel.children(&quot;.left&quot;).addClass(&quot;target&quot;).removeClass(&quot;left left1&quot;).css(that.targetTransform);
+									function slide(that){
+										// 切换主体
+										carosel.children(&quot;.right&quot;).removeClass(&quot;right&quot;).css(that.liCss);
+										carosel.children(&quot;.target&quot;).addClass(&quot;right&quot;).removeClass(&quot;target&quot;).css(that.rightCss);
+										carosel.children(&quot;.left&quot;).addClass(&quot;target&quot;).removeClass(&quot;left left1&quot;).css(that.targetCss);
 
-									// 代码复用
-									function addLeftCss(i){
-										carosel.children(&quot;li&quot;).eq(i).addClass(&quot;left left1&quot;).css(that.leftTransform);
+										// 代码复用
+										return function(i){
+											carosel.children(&quot;li&quot;).eq(i).addClass(&quot;left left1&quot;).css(that.leftCss);
+										}
 									}
+
+									// IE8
+									if(that.isIE8){
+										addLeftCss=slide(that.ie8Style);
+									//其他浏览器 
+									}else{
+										addLeftCss=slide(that.stdStyle);
+									}
+									
 
 									if(that.index[i]==0){
 										addLeftCss(that.caroselLens[i]-2);
@@ -477,8 +512,8 @@ $(&#x27;.flexslider&#x27;).flexslider({
 										that.index[i]--;
 									}
 
-									// 切换控制点
-									carosel.parent().find(&quot;.control-dot li&quot;).eq(that.index[i]).addClass(&quot;selected&quot;).siblings().removeClass(&#x27;selected&#x27;);
+									// 切换导航样式
+									that.toggleNav(caroselBox,that.index[i]);
 
 									// 给新元素绑定click事件
 									that.onClick(caroselBox);
@@ -489,6 +524,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									var that=YD.threeDCarosel;
 									var carosel=caroselBox.children(&quot;.threeD-carosel&quot;);
 									var i=that.caroselBox.index(caroselBox);
+									var addRightCss;
 
 									// 调整左右层叠关系
 									if(carosel.children(&quot;.left&quot;).hasClass(&#x27;left1&#x27;)){
@@ -498,14 +534,23 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									// 解绑旧元素click事件
 									that.offClick(caroselBox);
 
-									// 切换主体
-									carosel.children(&quot;.left&quot;).removeClass(&quot;left&quot;).css(that.liTransform);
-									carosel.children(&quot;.target&quot;).addClass(&quot;left&quot;).removeClass(&quot;target&quot;).css(that.leftTransform);
-									carosel.children(&quot;.right&quot;).addClass(&quot;target&quot;).removeClass(&#x27;right&#x27;).css(that.targetTransform);
+									function slide(that){
+										// 切换主体
+										carosel.children(&quot;.left&quot;).removeClass(&quot;left&quot;).css(that.liCss);
+										carosel.children(&quot;.target&quot;).addClass(&quot;left&quot;).removeClass(&quot;target&quot;).css(that.leftCss);
+										carosel.children(&quot;.right&quot;).addClass(&quot;target&quot;).removeClass(&#x27;right&#x27;).css(that.targetCss);
 
-									// 代码复用
-									function addRightCss(i){
-										carosel.children(&quot;li&quot;).eq(i).addClass(&#x27;right&#x27;).css(that.rightTransform);
+										// 代码复用
+										return function addRightCss(i){
+											carosel.children(&quot;li&quot;).eq(i).addClass(&#x27;right&#x27;).css(that.rightCss);
+										}
+									}
+									// IE8
+									if(that.isIE8){
+										addRightCss=slide(that.ie8Style);
+									// 其他浏览器
+									}else{
+										addRightCss=slide(that.stdStyle);
 									}
 
 									// 重选右侧元素
@@ -523,8 +568,8 @@ $(&#x27;.flexslider&#x27;).flexslider({
 										that.index[i]++;
 									}
 
-									// 切换控制点
-									carosel.parent().find(&quot;.control-dot li&quot;).eq(that.index[i]).addClass(&quot;selected&quot;).siblings().removeClass(&#x27;selected&#x27;);
+									// 切换导航样式
+									that.toggleNav(caroselBox,that.index[i]);
 
 									// 给新元素绑定click事件
 									that.onClick(caroselBox);
@@ -582,6 +627,53 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									}
 								},
 
+								// 单击导航切换
+								navSlide:function(caroselBox){
+									caroselBox.find(&quot;.carosel-nav li&quot;).click(function(){
+										var that=YD.threeDCarosel;
+										var navs=caroselBox.find(&quot;.carosel-nav li&quot;);
+										var navIndex=navs.index($(this));
+										var caroselIndex=that.caroselBox.index(caroselBox);
+										var classArr=[&quot;left&quot;,&quot;right&quot;,&quot;target&quot;];
+
+										that.offClick(caroselBox);
+
+										function slide(that){
+											for(var i=0;i&lt;classArr.length;i++){
+												caroselBox.find(&quot;.&quot;+classArr[i]).removeClass(classArr[i]+&quot; &quot;+classArr[i]+&quot;1&quot;).css(that.liCss);
+											}
+
+											caroselBox.find(&quot;.threeD-carosel li&quot;).eq(navIndex).addClass(&quot;target&quot;).css(that.targetCss);
+
+											if(navIndex==0){
+												caroselBox.find(&quot;.threeD-carosel li&quot;).eq(navs.length-1).addClass(&quot;left&quot;).css(that.leftCss);
+											}else{
+												caroselBox.find(&quot;.threeD-carosel li&quot;).eq(navIndex-1).addClass(&quot;left&quot;).css(that.leftCss);
+											}
+
+											if(navIndex==(navs.length-1)){
+												caroselBox.find(&quot;.threeD-carosel li&quot;).eq(0).addClass(&quot;right&quot;).css(that.rightCss);
+											}else{
+												caroselBox.find(&quot;.threeD-carosel li&quot;).eq(navIndex+1).addClass(&quot;right&quot;).css(that.rightCss);
+											}
+										}
+										
+										// IE8
+										if(that.isIE8){
+											slide(that.ie8Style);
+										// 其他浏览器
+										}else{
+											slide(that.stdStyle);
+										}
+
+										that.index[caroselIndex]=navIndex;
+										// 切换导航样式
+										that.toggleNav(caroselBox,navIndex);
+
+										that.onClick(caroselBox);
+									})
+								},
+
 								// 停止自动轮播
 								stopAutoSlide:function(caroselBox){
 									var that=this;
@@ -614,12 +706,17 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									caroselBox.find(&quot;.right&quot;).click(function(){
 										that.slideLeft(caroselBox);
 									});
+								},
+
+								// 切换导航样式
+								toggleNav:function(caroselBox,i){
+									caroselBox.find(&quot;.carosel-nav li&quot;).eq(i).addClass(&quot;selected&quot;).siblings().removeClass(&#x27;selected&#x27;);
 								}
 							}
-							/**********************PC3D轮播图 end************************/
+							/**********************3D轮播图 end************************/
 							</textarea>
 							<span class="spancolor">html结构、css样式及js调用方法如下：</span></br>
-							<textarea name="" class="textarea-code threed-carosel-textarea" disabled="disabled" style="height:1610px;">
+							<textarea name="" class="textarea-code threed-carosel-textarea" disabled="disabled" style="height:1750px;">
 【html】：
 &lt;div class=&quot;threeD-carosel-box&quot;&gt;
 	&lt;ul class=&quot;threeD-carosel&quot;&gt;
@@ -628,26 +725,28 @@ $(&#x27;.flexslider&#x27;).flexslider({
 		&lt;li&gt;&lt;img src=&quot;../images/carosel (3).jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;img src=&quot;../images/carosel (4).jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 	&lt;/ul&gt;
-	&lt;ul class=&quot;control-dot&quot;&gt;&lt;/ul&gt;
+	&lt;ul class=&quot;carosel-nav&quot;&gt;&lt;/ul&gt;
 &lt;/div&gt;
 
 【css】：
-/*------------------------------------------------PC3D轮播图-----------------------------------------------------*/
+/*------------------------------------------------3D轮播图-----------------------------------------------------*/
 .threeD-carosel-box {
   padding: 0;
+  margin: 0;
   position: relative;
-  margin: auto;
 }
 .threeD-carosel-box .threeD-carosel {
   padding: 0;
-  margin: 0;
   list-style: none;
   position: relative;
-  width: 100%;
-  height: 100%;
+  margin: auto;
 }
 .threeD-carosel-box .threeD-carosel li {
   position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: hidden;
 }
 .threeD-carosel-box .threeD-carosel .target {
   z-index: 999;
@@ -675,7 +774,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
-.threeD-carosel-box .control-dot {
+.threeD-carosel-box .carosel-nav {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -683,35 +782,41 @@ $(&#x27;.flexslider&#x27;).flexslider({
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
   padding: 10px 0;
+  text-align: center;
+  z-index: 999;
 }
-.threeD-carosel-box .control-dot li {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  margin: 0 5px;
-  float: left;
+.threeD-carosel-box .carosel-nav li {
+  display: inline-block;
+  width: 25px;
+  height: 5px;
+  border-top: 2px solid #999;
+  margin: 0 3px;
+  cursor: pointer;
 }
-.threeD-carosel-box .control-dot .selected {
-  background: #fff;
+.threeD-carosel-box .carosel-nav li:hover {
+  border-color: #444;
 }
-/*----------------------------------------------end PC3D轮播图----------------------------------------------------*/
+.threeD-carosel-box .carosel-nav .selected {
+  border-color: #444;
+}
+/*----------------------------------------------end 3D轮播图----------------------------------------------------*/
 
 【js调用方法及参数说明】：
-//PC3D轮播图
+//3D轮播图
 YD.threeDCarosel.init({
-	picWidth:"400px",				//图片宽度，必须有单位，可为px/rem，根据需要自己定义，下同
-	picHeight:"400px",				//图片高度
-	focusDepth:"300px",			//景深
-	backEleOffset:"300px",			//背后元素左右偏移值
+	picWidth:400,					//图片宽度
+	picHeight:400,					//图片高度
+	offset:200,					//背后元素左右偏移值
+	unit:"px",						//指定以上参数的单位
+	scale:0.8,						//非焦点图的缩放比例
 	duration:2000, 				//自动滑动间隔时长，单位ms，间隔时长应该大于动画速度
 	speed:300,					//动画速度，单位ms
 	autoSlide:true,					//自动轮播
 	touchSlide:true,				//触摸滑动
 	hoverPause:true,				//鼠标移入暂停自动轮播，移出启动
-	clickTurnover:true,				//单击左右图片切换
+	clickSlide:true,					//单击左右图片切换
+	navSlide:true,					//点击导航切换
 });
 							</textarea>
 						</p>
@@ -918,7 +1023,7 @@ scrollGround.prototype.eventWeel=function(){
 				<i class="side"></i>
 				<a href="#slider" class="apage js-pagesike active">pc端侧边栏</a>
 				<a href="#carouselTransparency" class="apage js-pagesike">轮播图</a>
-				<a href="#threed-carousel" class="apage js-pagesike">PC3D轮播图</a>
+				<a href="#threed-carousel" class="apage js-pagesike">3D轮播图</a>
 				<a href="#scrollBar" class="apage js-pagesike">自定义滚动条</a>
 				<a href="javascript:void(0);" class="apage js-scrollTop">返回顶部</a>
 			</div>
