@@ -14,7 +14,7 @@ body{
 }
 @font-size:16px;
 @color:#7986cb;
-@color1:red;
+@color1:#37474f;
 @duration:0.1s;
 @duration1:0.5s;
 .efct-h2{
@@ -863,7 +863,8 @@ body{
 /* *****************************特效20 */
 .btn-effect0020{
 	background:#fff;
-	box-shadow:inset 0 0 0 2px #fcc;
+	border:none;
+	box-shadow:inset 0 0 0 2px @color;
 	.transition(color,@duration1);
 	&:before{
 		content:"";
@@ -886,13 +887,13 @@ body{
 		border:2px solid transparent;
 	}
 	&:hover{
-		color:@color;
+		color:@color1;
 	}
 	&:hover:before{
 		width:100%;
 		height:100%;
-		border-top-color:@color;
-		border-right-color:@color;
+		border-top-color:@color1;
+		border-right-color:@color1;
 		transition:width @duration1/2 ease-out ,height @duration1/2 ease-out @duration1/2;
 		-webkit-transition:width @duration1/2 ease-out ,height @duration1/2 ease-out @duration1/2;
 		-moz-transition:width @duration1/2 ease-out ,height @duration1/2 ease-out @duration1/2;
@@ -901,8 +902,8 @@ body{
 	&:hover:after{
 		width:100%;
 		height:100%;
-		border-bottom-color:@color;
-		border-left-color:@color;
+		border-bottom-color:@color1;
+		border-left-color:@color1;
 		transition:border-color 0s ease-out @duration1,width @duration1/2 ease-out @duration1,height @duration1/2 ease-out @duration1*3/2;
 		-webkit-transition:border-color 0s ease-out @duration1,width @duration1/2 ease-out @duration1,height @duration1/2 ease-out @duration1*3/2;
 		-moz-transition:border-color 0s ease-out @duration1,width @duration1/2 ease-out @duration1,height @duration1/2 ease-out @duration1*3/2;
@@ -913,10 +914,10 @@ body{
 
 /* *****************************特效21 */
 .btn-effect0021{
-	box-shadow:0 5px 0 0 #999;
+	box-shadow:0 3px 2px 0 #999;
 	.transition(all,@duration);
 	&:hover{
-		.transform(translate3d(0,5px,0));
+		.transform(translate3d(0,3px,0));
 		box-shadow:none;
 	}
 }

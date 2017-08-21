@@ -1127,7 +1127,8 @@ body {
 /* *****************************特效20 */
 .btn-effect0020 {
   background: #fff;
-  box-shadow: inset 0 0 0 2px #fcc;
+  border: none;
+  box-shadow: inset 0 0 0 2px #7986cb;
   -moz-transition: color 0.5s ease-out 0s;
   /* Firefox 4 */
   -webkit-transition: color 0.5s ease-out 0s;
@@ -1165,13 +1166,13 @@ body {
   border: 2px solid transparent;
 }
 .btn-effect0020:hover {
-  color: #7986cb;
+  color: #37474f;
 }
 .btn-effect0020:hover:before {
   width: 100%;
   height: 100%;
-  border-top-color: #7986cb;
-  border-right-color: #7986cb;
+  border-top-color: #37474f;
+  border-right-color: #37474f;
   transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
   -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
   -moz-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
@@ -1180,8 +1181,8 @@ body {
 .btn-effect0020:hover:after {
   width: 100%;
   height: 100%;
-  border-bottom-color: #7986cb;
-  border-left-color: #7986cb;
+  border-bottom-color: #37474f;
+  border-left-color: #37474f;
   transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
   -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
   -moz-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
@@ -1189,7 +1190,7 @@ body {
 }
 /* *****************************特效21 */
 .btn-effect0021 {
-  box-shadow: 0 5px 0 0 #999;
+  box-shadow: 0 3px 2px 0 #999;
   -moz-transition: all 0.1s ease-out 0s;
   /* Firefox 4 */
   -webkit-transition: all 0.1s ease-out 0s;
@@ -1207,14 +1208,14 @@ body {
   /* Firefox */
   -o-transform-origin: 50% 50% 0;
   /* Opera */
-  transform: translate3d(0, 5px, 0);
-  -ms-transform: translate3d(0, 5px, 0);
+  transform: translate3d(0, 3px, 0);
+  -ms-transform: translate3d(0, 3px, 0);
   /* IE 9 */
-  -moz-transform: translate3d(0, 5px, 0);
+  -moz-transform: translate3d(0, 3px, 0);
   /* Firefox */
-  -webkit-transform: translate3d(0, 5px, 0);
+  -webkit-transform: translate3d(0, 3px, 0);
   /* Safari 和 Chrome */
-  -o-transform: translate3d(0, 5px, 0);
+  -o-transform: translate3d(0, 3px, 0);
   /* Opera */
   transform-origin: 50% 50% 0;
   box-shadow: none;
