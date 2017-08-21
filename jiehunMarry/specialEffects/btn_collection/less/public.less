@@ -34,29 +34,46 @@
 	    -webkit-font-smoothing:antialiased;
 	}
 	.box-sizing(@type:border-box){
-		box-sizing:@type;
 		-moz-box-sizing:@type; /* Firefox */
 		-webkit-box-sizing:@type; /* Safari */
+		box-sizing:@type;
 	}
-	.transition(@property:all,@duration:1s,@timing:ease-out){
-		transition: @property @duration @timing;
-		-moz-transition: @property @duration @timing; /* Firefox 4 */
-		-webkit-transition: @property @duration @timing; /* Safari 和 Chrome */
-		-o-transition: @property @duration @timing; /* Opera */
+	.transition(@property:all,@duration:1s,@timing:ease-out,@delay:0s){
+		-moz-transition: @property @duration @timing @delay; /* Firefox 4 */
+		-webkit-transition: @property @duration @timing @delay; /* Safari 和 Chrome */
+		-o-transition: @property @duration @timing @delay; /* Opera */
+		transition: @property @duration @timing @delay;
 	}
 	.transform(@value,@origin:50% 50% 0){
-		transform-origin:@origin;
 		-ms-transform-origin:@origin; 		/* IE 9 */
 		-webkit-transform-origin:@origin;	/* Safari 和 Chrome */
 		-moz-transform-origin:@origin;		/* Firefox */
 		-o-transform-origin:@origin;		/* Opera */
-
 		transform:@value;
+		
 		-ms-transform:@value; 		/* IE 9 */
 		-moz-transform:@value; 		/* Firefox */
 		-webkit-transform:@value; 	/* Safari 和 Chrome */
 		-o-transform:@value; 		/* Opera */
+		transform-origin:@origin;
 	}
+	.transform1(@value){
+		-ms-transform:@value; 		/* IE 9 */
+		-moz-transform:@value; 		/* Firefox */
+		-webkit-transform:@value; 	/* Safari 和 Chrome */
+		-o-transform:@value; 		/* Opera */
+		transform:@value;
+	}
+	.animation(@name,@duration:1s){
+		-webkit-animation:@name @duration; /* Safari 和 Chrome */
+		animation:@name @duration;
+	}
+	.animation1(@name,@duration:1s,@count:infinite,@direction:alternate){
+		-webkit-animation:@name @duration @count @direction; /* Safari 和 Chrome */
+		animation:@name @duration @count @direction;
+	}
+	
+
 	.ellipsis{
 		overflow:hidden;
 		white-space:nowrap;

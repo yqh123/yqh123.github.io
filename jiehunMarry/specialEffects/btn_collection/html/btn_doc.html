@@ -1602,7 +1602,7 @@
 <!-- 模块一 -->
             <div class="bs-docs-section">
                 <h2 id="btn0019" class="page-header">
-                    特效18:btn-effect0019
+                    特效19:btn-effect0019
                 </h2>
                 
                 
@@ -1623,12 +1623,13 @@
                 </div>
                 <figure class="highlight">
 <pre><code class="language-html" data-lang="html">
+/* *****************************特效19 */
 .btn-effect0019 {
   font-size: 0;
   border: none;
   overflow: visible;
 }
-.btn-effect0020:before {
+.btn-effect0019:before {
   content: attr(data-text);
   color: #7986cb;
   position: absolute;
@@ -1638,7 +1639,6 @@
   top: 0;
   background: white;
   font-size: 16px;
-  transform-origin: 50% 50% -20px;
   -ms-transform-origin: 50% 50% -20px;
   /* IE 9 */
   -webkit-transform-origin: 50% 50% -20px;
@@ -1656,22 +1656,23 @@
   /* Safari 和 Chrome */
   -o-transform: rotateX(0);
   /* Opera */
-  transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
+  transform-origin: 50% 50% -20px;
+  -moz-transition: all 0.1s ease-out 0s;
   /* Firefox 4 */
-  -webkit-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.1s ease-out 0s;
   /* Safari 和 Chrome */
-  -o-transition: all 0.2s ease-out;
+  -o-transition: all 0.1s ease-out 0s;
   /* Opera */
-  box-sizing: border-box;
+  transition: all 0.1s ease-out 0s;
   -moz-box-sizing: border-box;
   /* Firefox */
   -webkit-box-sizing: border-box;
   /* Safari */
+  box-sizing: border-box;
   border: 2px solid #7986cb;
   line-height: 38px;
 }
-.btn-effect0020:after {
+.btn-effect0019:after {
   content: attr(data-text);
   color: white;
   background: #7986cb;
@@ -1681,7 +1682,6 @@
   left: 0;
   top: 0;
   font-size: 16px;
-  transform-origin: 50% 50% -20px;
   -ms-transform-origin: 50% 50% -20px;
   /* IE 9 */
   -webkit-transform-origin: 50% 50% -20px;
@@ -1699,16 +1699,16 @@
   /* Safari 和 Chrome */
   -o-transform: rotateX(-90deg);
   /* Opera */
-  transition: transform 0.2s ease-out;
-  -moz-transition: transform 0.2s ease-out;
-  /* Firefox 4 */
-  -webkit-transition: transform 0.2s ease-out;
-  /* Safari 和 Chrome */
-  -o-transition: transform 0.2s ease-out;
-  /* Opera */
-}
-.btn-effect0020:hover:before {
   transform-origin: 50% 50% -20px;
+  -moz-transition: transform 0.1s ease-out 0s;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.1s ease-out 0s;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.1s ease-out 0s;
+  /* Opera */
+  transition: transform 0.1s ease-out 0s;
+}
+.btn-effect0019:hover:before {
   -ms-transform-origin: 50% 50% -20px;
   /* IE 9 */
   -webkit-transform-origin: 50% 50% -20px;
@@ -1726,10 +1726,10 @@
   /* Safari 和 Chrome */
   -o-transform: rotateX(90deg);
   /* Opera */
+  transform-origin: 50% 50% -20px;
   opacity: 0.4;
 }
-.btn-effect0020:hover:after {
-  transform-origin: 50% 50% -20px;
+.btn-effect0019:hover:after {
   -ms-transform-origin: 50% 50% -20px;
   /* IE 9 */
   -webkit-transform-origin: 50% 50% -20px;
@@ -1747,7 +1747,105 @@
   /* Safari 和 Chrome */
   -o-transform: rotateX(0);
   /* Opera */
+  transform-origin: 50% 50% -20px;
 }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0020" class="page-header">
+                    特效20:btn-effect0020
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0018 -->
+                  <a class="btn-effect btn-effect0020" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0018end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  /* *****************************特效20 */
+  .btn-effect0020 {
+    background: #fff;
+    border: none;
+    box-shadow: inset 0 0 0 2px #7986cb;
+    -moz-transition: color 0.5s ease-out 0s;
+    /* Firefox 4 */
+    -webkit-transition: color 0.5s ease-out 0s;
+    /* Safari 和 Chrome */
+    -o-transition: color 0.5s ease-out 0s;
+    /* Opera */
+    transition: color 0.5s ease-out 0s;
+  }
+  .btn-effect0020:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    box-sizing: border-box;
+    border: 2px solid transparent;
+  }
+  .btn-effect0020:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    box-sizing: border-box;
+    border: 2px solid transparent;
+  }
+  .btn-effect0020:hover {
+    color: #37474f;
+  }
+  .btn-effect0020:hover:before {
+    width: 100%;
+    height: 100%;
+    border-top-color: #37474f;
+    border-right-color: #37474f;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    -moz-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    -o-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+  .btn-effect0020:hover:after {
+    width: 100%;
+    height: 100%;
+    border-bottom-color: #37474f;
+    border-left-color: #37474f;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    -moz-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    -o-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+  }
 </code>
 </pre>
               
