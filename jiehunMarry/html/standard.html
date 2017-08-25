@@ -75,7 +75,7 @@
 					<div class="content">
 						<p class="info">
 							(1)PC和Wap都采用流式模块化布局，并要有注释：</br>
-							<textarea class="textarea-code" style="height: 242px;" name="">
+							<textarea spellcheck="false" class="textarea-code" style="height: 242px;" name="">
 &lt;body&gt;
 	&lt;!--头图--&gt;
 	&lt;div&gt;
@@ -103,8 +103,11 @@
 							(·)需要顾问上传的图片格式尽量为jpg格式（比如商家店铺图片等）。</br>
 						</p>
 						<p class="info">
-							(5)我们这边做的所有专题wap页面(包括商家切板)，在除安卓系统以外的系统下面都要在最底部都要加上<span class="spancolor">“注：以上活动与苹果公司无关”</span>,其结构和样式以及js判断代码如下：</br>
-							<textarea class="textarea-code" style="height: 290px;" name="">
+							(5)页面可编辑文本内容不要出现这两个符号：&lt;&gt; {}。</br>
+						</p>
+						<p class="info">
+							(6)我们这边做的所有专题wap页面(包括商家切板)，在除安卓系统以外的系统下面都要在最底部都要加上<span class="spancolor">“注：以上活动与苹果公司无关”</span>,其结构和样式以及js判断代码如下：</br>
+							<textarea spellcheck="false" class="textarea-code" style="height: 290px;" name="">
 【html】：
 &lt;div class=&quot;mobilePhoneSystem&quot;&gt;注：以上活动与苹果公司无关&lt;/div&gt;
 【css】：
@@ -119,7 +122,7 @@
   }
 【js】：
 if(hapj.browser.android){		//后台框架：hapj.browser.android在安卓系统下返回true
-	$(&#x27;. mobilePhoneSystem&#x27;).hide();
+	$(&#x27;.mobilePhoneSystem&#x27;).hide();
 }
 							</textarea>
 						</p>
@@ -149,7 +152,7 @@ if(hapj.browser.android){		//后台框架：hapj.browser.android在安卓系统�
 						</p>
 						<p class="info">
 							(6)如果a链接里面的href值是留给顾问去填写的，那么a链接的内容不得为空值，否则在我们的后台模版的编辑模式下会出问题，比如有一个a链接的按钮，按钮样式比较复杂，你可以用图片代替但不能用背景代替。</br>
-							<textarea class="textarea-code" style="height: 70px;" name="">
+							<textarea spellcheck="false" class="textarea-code" style="height: 70px;" name="">
 &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;				//错误写法
 
 &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;&quot;&gt;&lt;/a&gt;	//正确写法
@@ -157,7 +160,7 @@ if(hapj.browser.android){		//后台框架：hapj.browser.android在安卓系统�
 						</p>
 						<p class="info">
 							(7)如果a链接里面的href值和文字内容是留给顾问去填写的，那么a链接里面不得出现文字内容和其他嵌套标签并存的现象，否则顾问无法编辑文字和链接。</br>
-							<textarea class="textarea-code" style="height: 70px;" name="">
+							<textarea spellcheck="false" class="textarea-code" style="height: 70px;" name="">
 &lt;a href=&quot;&quot;&gt;原价：&lt;i&gt;1998元&lt;/i&gt;&lt;/a&gt;			// 错误写法
 
 &lt;a href=&quot;&quot;&gt;原价：1998元&lt;/a&gt;				// 正确写法
@@ -172,7 +175,7 @@ if(hapj.browser.android){		//后台框架：hapj.browser.android在安卓系统�
 						<p class="info">
 							(10)专题页面很多可编辑img都必须设置公司的LOGO做为img的加载背景图(记得给这类图片添加宽高样式)。</br>
 							<img src="../images/weddingExpoFile-page-img20.png" class="imginfo">
-							<textarea class="textarea-code" style="height: 155px;" name="">
+							<textarea spellcheck="false" class="textarea-code" style="height: 155px;" name="">
 img{ 
 	display: block;
 	border:none; 
@@ -200,7 +203,7 @@ img{
 					<div class="content">
 						<p class="info">
 							因为都是单页面开发，所以我们建议尽量把js写在js文件里面，并且统一规范。如下图所示，在创建的对象下面去挂载一些方法和属性，这样也是为了尽可能的避免代码污染，同时也方便其他同事在修改或添加其他功能时更加安全和方便。</br>
-							<textarea class="textarea-code" style="height: 292px;" name="">
+							<textarea spellcheck="false" class="textarea-code" style="height: 292px;" name="">
 var weddingExpoFile = {};
 
 $(function(){
