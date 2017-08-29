@@ -96,6 +96,7 @@ body {
   zoom: 1;
   height: 100%;
   padding: 0 10px;
+  text-align: center;
 }
 .weddingExpoFile-public-header .header-nav:after {
   content: '';
@@ -103,7 +104,7 @@ body {
   clear: both;
 }
 .weddingExpoFile-public-header .navas {
-  float: left;
+  display: inline-block;
   font-size: 0;
 }
 .weddingExpoFile-public-header .navas a {

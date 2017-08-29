@@ -42,7 +42,7 @@
 		<div class="info-writte wrap">
 			<div class="info">
 				<h2>常用JS效果</h2>
-				<p>平时在工作中经常使用的js效果比如，轮播图pc、轮播图wap、自定义滚动条、侧边栏pc等，为了提高工作效率节省时间，以后类似的常用效果都会一一封装。</p>
+				<p>平时在工作中经常使用的js效果比如，幻灯片pc、幻灯片wap、自定义滚动条、侧边栏pc等，为了提高工作效率节省时间，以后类似的常用效果都会一一封装。</p>
 			</div>
 			<i class="middle"></i>
 		</div>
@@ -66,7 +66,7 @@
 						</p>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端</span></br>
-							<textarea name="" class="textarea-code" style="height: 1112px;">
+							<textarea spellcheck="false" name="" class="textarea-code" style="height: 1112px;">
 function sidebar(){
 	var oN=true;
 	var num=400;		// 滚动条滚动到哪里隐藏侧边栏
@@ -138,11 +138,11 @@ function sidebar(){
 				<div class="page js-page-title" id="carouselTransparency">
 					<div class="title">
 						<i></i>
-						<h3>轮播图</h3>
+						<h3>幻灯片</h3>
 					</div>
 					<div class="content">
 						<p class="info">
-							轮播图效果在平时页面中经常被使用，目前整理了一个jquery的flexslider轮播图插件，兼容性也不错，并且实现了wap端触屏切换，下面的代码里面会注明对公司目前有用的接口效果，至于其他的接口效果不做解释，如果想要了解更多可以自己去问度娘。</br>
+							幻灯片效果在平时页面中经常被使用，这里整理了一个jquery的flexslider幻灯片插件，兼容性也不错，并且实现了wap端触屏切换，下面的代码里面会注明对公司目前有用的接口效果，至于其他的接口效果不做解释，如果想要了解更多可以自己去问度娘。</br>
 						</p>
 						<p class="info">
 							<div class="flexslider" style="width:100%;">
@@ -156,7 +156,7 @@ function sidebar(){
 						</p>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端+wap端</span></br>
-							<textarea name="" class="textarea-code" style="height: 1370px;">
+							<textarea spellcheck="false" name="" class="textarea-code" style="height: 1370px;">
 【html】：
 &lt;div class=&quot;flexslider&quot;&gt;
 	&lt;ul class=&quot;slides&quot;&gt;
@@ -864,7 +864,7 @@ YD.threeDCarosel.init({
 						</div>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端</span></br>
-							<textarea name="" class="textarea-code" style="height: 2564px;">
+							<textarea spellcheck="false" name="" class="textarea-code" style="height: 2550px;">
 【html结构】: 外框里面的class都是固定的，注意每个模块的css有些是有定位属性的
 &lt;div class=&quot;&quot; id=&quot;ID名&quot;&gt;							---有position:relative; 和 overflow:hiddle; 属性
 	&lt;div class=&quot;scroll-content-wrap&quot;&gt;内容区域&lt;/div&gt; 	---有position:absolute; 属性
@@ -989,8 +989,7 @@ scrollGround.prototype.scrollWeel=function(){
 			//IE和谷歌下 清除浏览器默认样式
 			ev.returnValue = false;
 		};	
-		//用法：upFn函数代表滚轮向上滚动
-		//      downFn函数代表滚轮向下滚动
+		//用法：upFn函数代表滚轮向上滚动  downFn函数代表滚轮向下滚动     
 	};
 };     
 
