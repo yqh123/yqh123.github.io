@@ -325,6 +325,7 @@ YD.threeDCarosel={
 	touchSlide:function(caroselBox){
 		var that=this;
 		var startX,startY,endX,endY;
+		var minMove=50;
 
 		caroselBox[0].addEventListener("touchstart",touch,false);
 		caroselBox[0].addEventListener("touchend",touch,false);
@@ -348,9 +349,9 @@ YD.threeDCarosel={
 				endX=event.changedTouches[0].clientX;
 				endY=event.changedTouches[0].clientY;
 
-				if((endX-startX)<-100){
+				if((endX-startX)<-minMove){
 					that.slideLeft(caroselBox);
-				}else if((endX-startX)>100){
+				}else if((endX-startX)>minMove){
 					that.slideRight(caroselBox);
 				}
 

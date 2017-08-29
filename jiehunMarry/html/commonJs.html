@@ -286,7 +286,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 								<span class="tooltip">复制成功~</span>
 							</div>
 							<textarea class="threed-carosel-js">
-							/**********************3D轮播图************************/
+							/**********************PC3D轮播图************************/
 							var YD={};
 							YD.threeDCarosel={
 								defaults:{
@@ -591,6 +591,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 								touchSlide:function(caroselBox){
 									var that=this;
 									var startX,startY,endX,endY;
+									var minMove=50;
 
 									caroselBox[0].addEventListener(&quot;touchstart&quot;,touch,false);
 									caroselBox[0].addEventListener(&quot;touchend&quot;,touch,false);
@@ -614,9 +615,9 @@ $(&#x27;.flexslider&#x27;).flexslider({
 											endX=event.changedTouches[0].clientX;
 											endY=event.changedTouches[0].clientY;
 
-											if((endX-startX)&lt;-100){
+											if((endX-startX)&lt;-minMove){
 												that.slideLeft(caroselBox);
-											}else if((endX-startX)&gt;100){
+											}else if((endX-startX)&gt;minMove){
 												that.slideRight(caroselBox);
 											}
 
@@ -714,7 +715,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									caroselBox.find(&quot;.carosel-nav li&quot;).eq(i).addClass(&quot;selected&quot;).siblings().removeClass(&#x27;selected&#x27;);
 								}
 							}
-							/**********************3D轮播图 end************************/
+							/**********************PC3D轮播图 end************************/
 							</textarea>
 							<span class="spancolor">html结构、css样式及js调用方法如下：</span></br>
 							<textarea name="" class="textarea-code threed-carosel-textarea" disabled="disabled" style="height:1820px;">
