@@ -60,6 +60,9 @@ textarea.threed-carosel-js {
   border: none;
   opacity: 0;
 }
+.threeD-carosel-box {
+  margin: auto !important;
+}
 .threeD-carosel-box1 {
   padding: 0;
   margin: 0;
@@ -126,27 +129,31 @@ textarea.threed-carosel-js {
   overflow: hidden;
 }
 .threeD-carosel-box .threeD-carosel .target {
-  z-index: 999;
+  z-index: 9;
 }
 .threeD-carosel-box .threeD-carosel .left {
-  z-index: 998;
+  z-index: 8;
 }
 .threeD-carosel-box .threeD-carosel .left:before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
 .threeD-carosel-box .threeD-carosel .left1 {
-  z-index: 996;
+  z-index: 6;
 }
 .threeD-carosel-box .threeD-carosel .right {
-  z-index: 997;
+  z-index: 7;
 }
 .threeD-carosel-box .threeD-carosel .right:before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -161,7 +168,7 @@ textarea.threed-carosel-js {
   width: 100%;
   padding: 10px 0;
   text-align: center;
-  z-index: 999;
+  z-index: 9;
 }
 .threeD-carosel-box .carosel-nav li {
   display: inline-block;

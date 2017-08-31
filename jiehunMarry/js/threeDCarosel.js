@@ -7,8 +7,8 @@ $(function(){
 		offset:200,						//背后元素左右偏移值
 		unit:"px",						//指定以上参数的单位
 		scale:0.8,						//非焦点图的缩放比例
-		duration:2000, 					//自动滑动间隔时长，单位ms，间隔时长应该大于动画速度
-		speed:300,						//动画速度，单位ms
+		duration:3000, 					//自动滑动间隔时长，单位ms，间隔时长应该大于动画速度
+		speed:600,						//动画速度，单位ms
 		autoSlide:true,					//自动轮播
 		touchSlide:true,				//触摸滑动
 		hoverPause:true,				//鼠标移入暂停自动轮播，移出启动
@@ -325,6 +325,7 @@ YD.threeDCarosel={
 	touchSlide:function(caroselBox){
 		var that=this;
 		var startX,startY,endX,endY;
+		var minMove=50;
 
 		caroselBox[0].addEventListener("touchstart",touch,false);
 		caroselBox[0].addEventListener("touchend",touch,false);
@@ -348,9 +349,9 @@ YD.threeDCarosel={
 				endX=event.changedTouches[0].clientX;
 				endY=event.changedTouches[0].clientY;
 
-				if((endX-startX)<-100){
+				if((endX-startX)<-minMove){
 					that.slideLeft(caroselBox);
-				}else if((endX-startX)>100){
+				}else if((endX-startX)>minMove){
 					that.slideRight(caroselBox);
 				}
 

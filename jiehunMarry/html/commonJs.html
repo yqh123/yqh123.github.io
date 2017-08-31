@@ -286,7 +286,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 								<span class="tooltip">复制成功~</span>
 							</div>
 							<textarea class="threed-carosel-js">
-							/**********************3D轮播图************************/
+							/**********************PC3D轮播图************************/
 							var YD={};
 							YD.threeDCarosel={
 								defaults:{
@@ -591,6 +591,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 								touchSlide:function(caroselBox){
 									var that=this;
 									var startX,startY,endX,endY;
+									var minMove=50;
 
 									caroselBox[0].addEventListener(&quot;touchstart&quot;,touch,false);
 									caroselBox[0].addEventListener(&quot;touchend&quot;,touch,false);
@@ -614,9 +615,9 @@ $(&#x27;.flexslider&#x27;).flexslider({
 											endX=event.changedTouches[0].clientX;
 											endY=event.changedTouches[0].clientY;
 
-											if((endX-startX)&lt;-100){
+											if((endX-startX)&lt;-minMove){
 												that.slideLeft(caroselBox);
-											}else if((endX-startX)&gt;100){
+											}else if((endX-startX)&gt;minMove){
 												that.slideRight(caroselBox);
 											}
 
@@ -714,10 +715,10 @@ $(&#x27;.flexslider&#x27;).flexslider({
 									caroselBox.find(&quot;.carosel-nav li&quot;).eq(i).addClass(&quot;selected&quot;).siblings().removeClass(&#x27;selected&#x27;);
 								}
 							}
-							/**********************3D轮播图 end************************/
+							/**********************PC3D轮播图 end************************/
 							</textarea>
 							<span class="spancolor">html结构、css样式及js调用方法如下：</span></br>
-							<textarea name="" class="textarea-code threed-carosel-textarea" disabled="disabled" style="height:1750px;">
+							<textarea name="" class="textarea-code threed-carosel-textarea" disabled="disabled" style="height:1820px;">
 【html】：
 &lt;div class=&quot;threeD-carosel-box&quot;&gt;
 	&lt;ul class=&quot;threeD-carosel&quot;&gt;
@@ -730,7 +731,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 &lt;/div&gt;
 
 【css】：
-/*------------------------------------------------3D轮播图-----------------------------------------------------*/
+/* *************************threed-carosel_css S**************************** */
 .threeD-carosel-box {
   padding: 0;
   margin: 0;
@@ -750,27 +751,31 @@ $(&#x27;.flexslider&#x27;).flexslider({
   overflow: hidden;
 }
 .threeD-carosel-box .threeD-carosel .target {
-  z-index: 999;
+  z-index: 9;
 }
 .threeD-carosel-box .threeD-carosel .left {
-  z-index: 998;
+  z-index: 8;
 }
 .threeD-carosel-box .threeD-carosel .left:before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
 .threeD-carosel-box .threeD-carosel .left1 {
-  z-index: 996;
+  z-index: 6;
 }
 .threeD-carosel-box .threeD-carosel .right {
-  z-index: 997;
+  z-index: 7;
 }
 .threeD-carosel-box .threeD-carosel .right:before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -785,7 +790,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
   width: 100%;
   padding: 10px 0;
   text-align: center;
-  z-index: 999;
+  z-index: 9;
 }
 .threeD-carosel-box .carosel-nav li {
   display: inline-block;
@@ -801,7 +806,7 @@ $(&#x27;.flexslider&#x27;).flexslider({
 .threeD-carosel-box .carosel-nav .selected {
   border-color: #444;
 }
-/*----------------------------------------------end 3D轮播图----------------------------------------------------*/
+/* *************************threed-carosel_css E**************************** */
 
 【js调用方法及参数说明】：
 //3D轮播图
@@ -811,8 +816,8 @@ YD.threeDCarosel.init({
 	offset:200,					//背后元素左右偏移值
 	unit:"px",						//指定以上参数的单位
 	scale:0.8,						//非焦点图的缩放比例
-	duration:2000, 				//自动滑动间隔时长，单位ms，间隔时长应该大于动画速度
-	speed:300,					//动画速度，单位ms
+	duration:3000, 				//自动滑动间隔时长，单位ms，间隔时长应该大于动画速度
+	speed:600,					//动画速度，单位ms
 	autoSlide:true,					//自动轮播
 	touchSlide:true,				//触摸滑动
 	hoverPause:true,				//鼠标移入暂停自动轮播，移出启动
