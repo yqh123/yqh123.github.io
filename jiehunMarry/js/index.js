@@ -5,6 +5,7 @@ $(function(){
 	weddingExpoFile.publicPreface();		// 公共侧边栏js效果		
 	weddingExpoFile.rillScrollBar();		// 自定义滚动条	
 	weddingExpoFile.flexslider();			// 轮播图
+	weddingExpoFile.imgCover($(".img-active"),$(".img-cover span"),$(".img-cover"));  //放大单独显示图片
 });
 
 // 公共顶部导航鼠标移入移出效果
@@ -253,3 +254,13 @@ YQHscrollGround.prototype.eventWeel=function(){
 		return false;
 	});
 };
+
+// 单击弹出遮罩，单独展示图片
+weddingExpoFile.imgCover=function(activeDom,closeDom,coverDom){
+	activeDom.click(function(){
+		coverDom.css({"display":"block"});
+	})
+	closeDom.click(function() {
+		coverDom.css({"display":"none"});
+	});
+}

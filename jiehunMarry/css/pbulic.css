@@ -209,6 +209,19 @@ body {
 .weddingExpoFile-content-wrap .content-left .content {
   margin-left: -14px;
 }
+.weddingExpoFile-content-wrap .content-left .content h4 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 15px 0 10px 0;
+}
+.weddingExpoFile-content-wrap .content-left .content h5 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 15px 0 10px 0;
+}
+.weddingExpoFile-content-wrap .content-left .content > img {
+  max-width: 100%;
+}
 .weddingExpoFile-content-wrap .content-left .content strong {
   font-size: 18px;
 }
