@@ -1,0 +1,314 @@
+@charset "utf-8";
+/*-----------------------------------清除默认样式-------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+i,
+b,
+em,
+strong {
+  font-style: normal;
+}
+img {
+  display: block;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(http://2.tthunbohui.cn/zhuanti/10809/YQH-imgBj-logo.png);
+  background-size: 20% auto;
+}
+.clear-A {
+  text-decoration: none;
+  color: #333;
+}
+/*---------------------------------------end------------------------------------------------*/
+/*-------------------------------------公共样式---------------------------------------------*/
+.wrap {
+  width: 15rem;
+  margin: 0 auto;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+body {
+  font-family: "微软雅黑";
+  color: #333;
+  font-size: 40px;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.middle:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  font-size: 0;
+}
+.marginfix:before {
+  content: "";
+  display: table;
+}
+/* *******************************背景图设置mixin */
+/* ******************************end */
+/* *************************鼠标移入wayra效果mixin */
+.weddingExpoFile-public-header {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+}
+.weddingExpoFile-public-header .header-nav {
+  height: 100%;
+  padding: 0 10px;
+  text-align: center;
+}
+.weddingExpoFile-public-header .header-nav:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.weddingExpoFile-public-header .navas {
+  display: inline-block;
+  font-size: 0;
+}
+.weddingExpoFile-public-header .navas a {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #563d7c;
+  height: 42px;
+  text-decoration: none;
+  line-height: 42px;
+}
+.weddingExpoFile-public-header .navas .active {
+  color: #463265;
+  background-color: #ececec;
+}
+.weddingExpoFile-public-header .navas .activeIn {
+  color: #463265;
+  background-color: #ececec;
+}
+/* *******************************end */
+/*---------------------------------------end------------------------------------------------*/
+.col-xs-9 {
+  width: 75%;
+  float: left;
+}
+.col-xs-3 {
+  width: 25%;
+  float: right;
+}
+h1 {
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+h2 {
+  font-weight: 500;
+  color: #333;
+}
+p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+/* **********************************************************docs css */
+code,
+body {
+  font-family: "Microsoft Yahei", "微软雅黑";
+}
+code {
+  font-size: 12px;
+  line-height: 20px;
+}
+body {
+  background: #fff !important;
+}
+.cp {
+  color: #099;
+}
+.s {
+  color: #d44950;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 30px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+/* ****************************header start*/
+.bs-docs-header {
+  margin-bottom: 40px;
+  font-size: 20px;
+  background: #6f5499;
+  color: #cdbfe3;
+  padding: 30px 0;
+  text-align: center;
+}
+@media (min-width: 767px) {
+  .bs-docs-header {
+    padding: 60px 0;
+    font-size: 24px;
+    text-align: left;
+  }
+}
+.bs-docs-header h1 {
+  color: #fff;
+  font-size: 60px;
+}
+.bs-docs-header p {
+  font-size: 24px;
+}
+/* *****************************header end */
+.bs-docs-section {
+  margin-bottom: 20px;
+}
+.bs-docs-section .bs-example {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  padding: 45px 15px 15px;
+}
+.bs-docs-section .bs-example:after {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #959595;
+  letter-spacing: 1px;
+}
+.bs-docs-section .bs-example + .highlight {
+  margin: -16px 0 15px 0;
+  border-radius: 0 0 4px 4px ;
+  padding: 9px 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+.bs-docs-section .bs-example + .highlight pre {
+  padding: 0;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  word-break: normal;
+}
+.bs-callout-info {
+  display: none;
+  border: 1px solid #eee;
+  border-left: 5px solid #1b809e;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 3px;
+}
+.bs-callout-info h4 {
+  color: #1b809e;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout-info p {
+  margin-bottom: 0;
+}
+.bs-docs-sidebar {
+  padding-left: 20px;
+  margin: 20px 0 20px 0;
+}
+.bs-docs-sidebar li {
+  border-left: 2px solid transparent;
+}
+.bs-docs-sidebar li a {
+  font-size: 14px;
+  display: block;
+  padding: 4px 20px ;
+  font-weight: 500;
+  color: #767676;
+  text-decoration: none;
+}
+.back-to-top,
+.show_edit_btn {
+  padding: 4px 10px;
+  margin: 10px 0 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+  text-decoration: none;
+}
+.back-to-top:visited,
+.show_edit_btn:visited {
+  color: #999;
+  text-decoration: none;
+}
+.back-to-top:hover,
+.show_edit_btn:hover {
+  color: #6f5499;
+  text-decoration: none;
+}
+.container {
+  position: relative;
+  width: 1200px;
+  margin: auto;
+}
+.lead {
+  font-size: 16px;
+  color: #555;
+  font-weight: 300;
+}
+.bs-docs-sidebar.affix li {
+  border-left: 2px solid transparent;
+}
+.bs-docs-sidebar.affix li:hover {
+  border-color: #6f5499;
+}
+.bs-example {
+  text-align: center;
+}
+.bs-example:after {
+  content: "实例";
+}
+.base-example:after {
+  content: "标准按钮实例";
+}
+.bs-example1:after {
+  content: "特效调用示例";
+}
+.bs-docs-sidebar.affix .nav-selected {
+  border-left: 2px solid #6f5499;
+}
+.bs-docs-sidebar.affix .nav-selected a {
+  color: #6f5499;
+}
+.bs-example .extend-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-right: none;
+  cursor: pointer;
+  color: #6f5499;
+}
+.bs-example .extend-btn-x {
+  display: none;
+}
+.highlight {
+  display: none;
+}
+.highlight-show {
+  display: block;
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>中国婚博会-商家切板教程</title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script src="../js/jquery-1.9.1.js"></script>
+	<script src="../js/index.js"></script>
+</head>
+<body>
+	<!--公共顶部导航-->
+	<div class="weddingExpoFile-public-header">
+		<div class="header-nav">
+			<div class="navas">
+				<a href="./index.html" class="writee-color333">文档首页</a>
+				<a href="./needUnderstand.html" class="writee-color333">前言</a>
+				<a href="./backstageExplanation.html" class="writee-color333">后台操作讲解</a>
+				<a href="./standard.html" class="writee-color333">前端规范</a>
+				<a href="./cuttingPlate.html" class="writee-color333 activeIn active">商家切板教程</a>
+				<a href="./mailboxEDM.html" class="writee-color333">EDM制作规范</a>
+				<a href="./special.html" class="writee-color333">项目中的特殊效果</a>
+				<a href="./commonJs.html" class="writee-color333">项目常用JS效果</a>
+				<a href="../specialEffects/btn_collection/html/btn_doc.html" class="writee-color333">按钮特效合集</a>
+				<a href="../specialEffects/pic_collection/html/doc.html" class="writee-color333">图片特效合集</a>
+				<a href="./model.html" class="writee-color333">项目常用工具</a>
+				<a href="http://www.bootcss.com/p/lesscss/" class="writee-color333">Less教程</a>
+				<a href="./extend.html" class="writee-color333">扩展内容</a>
+			</div>
+		</div>
+	</div>
+	<!--end-->
+	
+	<!--二级页面公共头部-->
+	<div class="weddingExpoFile-public-info">
+		<div class="info-writte wrap">
+			<div class="info">
+				<h2>商家切板教程</h2>
+				<p>“商家专题页面”也叫“商家切板页面”，是由商家自己设计，然后投放到我们平台的页面，我们前端仅仅对商家专题做全图切板，页面不做任何的特殊效果,都是由一个个img标签去显示的页面，制作熟练的话，一个切板大概也就5分钟左右，下面会逐步讲解如何制作商家切板页面。</p>
+			</div>
+			<i class="middle"></i>
+		</div>
+	</div>
+	<!--end-->
+	
+	<!--二级页面内容区域-->
+	<div class="weddingExpoFile-content-wrap">
+		<div class="weddingExpoFile-content wrap">
+			<div class="content-left">
+				<div class="page js-page-title" id="explain">
+					<div class="title">
+						<i></i>
+						<h3>前言说明</h3>
+					</div>
+					<div class="content">
+						<p class="info">“商家切板页面”都是由和商家对接的顾问发给你的，里面会包含3个文件：pc图片，wap图片，说明文档（包含一些细节的东西，下面会讲到），下面的讲解也会先从pc切板开始，然后讲解wap切板和说明文档里面的东西；同时这里会结合“商家专题模版”文件一起进行讲解，在切图的同时修改模版html页面里面的代码。</p>
+						<div class="info-img">
+							<img src="../images/weddingExpoFile-page-img24.png">
+							<img src="../images/weddingExpoFile-page-img25.png">
+							<hr style="margin-bottom: 10px;">
+							<img src="../images/weddingExpoFile-page-img24-1.png">
+							<img src="../images/weddingExpoFile-page-img24-2.png">
+						</div>
+					</div>
+				</div>
+				<div class="page js-page-title" id="explainPc">
+					<div class="title">
+						<i></i>
+						<h3>PC切板教程</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							【第一步】：打开ps软件，把pc图片放入ps里面，并且做好安全区域参考线(参考线范围在1024-1330之间，为了兼容小屏浏览器，最好不要超过1200。</br>
+							<img src="../images/weddingExpoFile-page-img26.png" class="imginfo">
+						</p>
+						<p class="info">
+							【第二步】：记录参考线宽度（以上图为列：1030px），然后在“商家切板页面（PC模版）”里面去修改代码；把红色箭头的地方都修改为（1030+20=1050），其实主要是修改那个width:1050px;的地方，多加上那20px是为了解决body出现滚动条后，导致背景图片和img图片不能完美匹配的问题，不信的话你可以不加这20相素继续往下做试试（现在看不懂没关系，继续往下看就知道了）。</br>
+							<img src="../images/weddingExpoFile-page-img27.png" class="imginfo">
+						</p>
+						<p class="info">
+							【第三步】：在原图上把参考线里面的图片全部填白，把这个图片保存在你的项目里面（保存图片：ctrl+shift+alt+s），图片格式选择“jpg”，图片质量选择80-100之间即可，保存图片名称为“body_bj.jpg”，这张图片将会作为背景图片使用。</br>
+							<img src="../images/weddingExpoFile-page-img28.png" class="imginfo">
+						</p>
+						<p class="info">
+							【第四步】：在ps的“历史记录”里面重新还原之前打开的设计稿；还原了之后再用（shift+ctrl+alt+s）先确保你之后保存的都是jpg格式的图片（选择图片格式：jpg；点击“完成”即可）。</br>
+							<img src="../images/weddingExpoFile-page-img29.png" class="imginfo">
+						</p>
+						<p class="info">
+							【第五步】：找到“画布大小”工具（图像-->画布大小），设置好宽度（1030+20），点击“确定”-->“裁切”进行ps裁切图片。</br>
+							<div class="info-img">
+								<img src="../images/weddingExpoFile-page-img30.png">
+								<span class="info-writte" style="left: 0; bottom: 248px;">（宽度设置为“1050”: 裁切后得到右边的图片）</span>
+								<img src="../images/weddingExpoFile-page-img31.png">
+							</div>
+						</p>
+						<p class="info">
+							【第六步】：在ps里面找到“切片工具”，选择“切片选择工具”；选择“水平划分”，设置“100-300”之间的数值（至于到底设置多少，要根据你的设计稿上面的点击按钮来定，要保证大部分按钮都不被“横切线”盖住即可），同时要更改代码里面的img高度值=你设置的“像素/切片”值。</br>
+							<div class="info-img">
+								<img src="../images/weddingExpoFile-page-img32.png">
+								<img src="../images/weddingExpoFile-page-img33.png">
+								<img src="../images/weddingExpoFile-page-img34.png">
+								<img src="../images/weddingExpoFile-page-img35.png">
+							</div>
+						</p>
+						<p class="info">
+							【第七步】：检查切片区域，查看图片上的点击按钮区域是否有被“横切线”覆盖的地方，如果有部分按钮被覆盖了则进行如下处理。</br>
+							<img src="../images/weddingExpoFile-page-img36.png" class="imginfo">
+							（使用“切片选择工具”，用鼠标左键红框那个序列号去选中这个切片，然后鼠标右键选择“删除切片”）。</br>
+							<img src="../images/weddingExpoFile-page-img37.png" class="imginfo">
+							（“删除切片”后原来的横切线至灰，这时使用“切片选择工具”，用鼠标左键选中删除序列号的上一个序列号，之后鼠标左键红框区域的小点，进行拖动，直至原来被删除的切片底部位置，这时你会发现，灰色切片被它的上一个切片包含住了，并且ps序列号也得到了修正）。</br>
+							<img src="../images/weddingExpoFile-page-img38.png" class="imginfo">
+							<img src="../images/weddingExpoFile-page-img39.png" class="imginfo">
+							（接下来还要去修改代码部分，找到ps序列号的那张图片，把高度修改为原来的两倍即可；而且这里建议每更改一个切板序列，都要同步进行代码的更改，不要以为自己记忆力好，就全部处理完后在一起更改，这样会容易出错）。</br>
+							（这里还有一点要注意，一般最后一张切板图片的“横切线”高度值都不是你设置的那个高度值，你需要测量好最后那个切板图片的高度值，然后更改代码最后一张图片的高度值）。</br>
+							<img src="../images/weddingExpoFile-page-img40.png" class="imginfo">
+						</p>
+						<p class="info">
+							【第八步】：横切线都检查完成无覆盖情况后，保存jpg图片（shift+ctrl+alt+s），文件名命名为“pc.jpg”即可（注意保存图片时，pc端的名字统一命名为pc.jpg，而wap端的统一命名为wap.jpg）；保存完毕后，ps会自动帮你生成一个“images”文件夹在你的保存目录里面，最后你在把你之前那张“body_bj.jpg”的背景图片放入这个“images”文件夹里面即可。</br>
+							<img src="../images/weddingExpoFile-page-img41.png" class="imginfo">
+						</p>
+						<p class="info">
+							【第九步】：之后就可以用“dreamweaver”去导入热区了，如果你不会用"dreamweaver"（在<a href="../html/model.html" target="_blank" class="ahref">“项目常用工具”</a>中有），那就叫你的同事教你，很简单。不过要注意给加人热区的按钮部分加上style="outline:none;"（加在area标签行间即可），去掉默认点击时的蓝色边框。</br>
+							<img src="../images/weddingExpoFile-page-img42.png" class="imginfo">
+						</p>
+						<p class="info">
+							【第十步】：热区导完后，在你的代码里面就会有map热区标签生成，之后你就可以对map里面的href做替换（商家切片的链接按钮无非就是"预约到婚博会"或者"预约到店"或者“链接到商家自己的平台”等这几种情况）：从“项目常用工具”中下载的文件夹里面有“商家切板模版页面”，在里面最下面有具体的代码，你只需要替换对应按钮“href="#"里面的值并加上一些个别代码即可（至于什么是“预约到婚博会”或者“预约到店”，在<a href="" target="_blank" class="ahref">“项目中的特殊效果”</a>这个模块中会讲到）。”</br>
+							<img src="../images/weddingExpoFile-page-img43.png" class="imginfo">
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="explainWap">
+					<div class="title">
+						<i></i>
+						<h3>Wap切板教程</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							wap端的商家切板最简单，他就是pc商家切板的简化版，它是从“第六步”直接开始的，并且它不需要用到"dreamweaver"去导热区，是直接用a标签包住img标签即可，还记得pc切板的“第七步”？里面有提到，如果点击按钮被“横切线”覆盖的话，要做处理，但在wap端，如果你觉得麻烦的话，可以直接把那个被“横切线”覆盖的按钮的相邻两张图片都用a标签包起来，a标签href值设置成一样即可；需要注意的是pc和wap端“预约功能”的代码是不一样的，pc和wap模版html页面最底部都有代码提示给到你。</br>
+							<img src="../images/weddingExpoFile-page-img44.png" class="imginfo">
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="explainFile">
+					<div class="title">
+						<i></i>
+						<h3>说明文档</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							之前说过，“商家专题页面”都是由顾问发给前端部门制作的，顾问写的文档里面会告诉你这个商家的名称、商家的分类、所属的行业、页面按钮是预约到个平台、店铺ID等一些信息。我们在本地做完页面后都会把页面投放到我们的后台框架中，那么在“添加”项目的时候，这些信息都会用到，如果顾问发来的“商家切板页面”里面没有这个文档的话，建议你跟他们要，不然容易在制作的过程中，反复的去跟他们沟通，既耽误你的时间，也耽误他们的时间。</br>
+							<img src="../images/weddingExpoFile-page-img46.png" class="imginfo">
+						</p>
+					</div>
+				</div>
+				<div class="page js-page-title" id="explainModel">
+					<div class="title">
+						<i></i>
+						<h3>商家专题模板</h3>
+					</div>
+					<div class="content">
+						<p class="info">
+							为了快速制作商家专题页面（商家切板页面），我们在这里写好了模版页面，你只需要替换或修改模版html里面的部分代码即可完成一个“商家切板页面”；同时文件里面还提供了练习文件，你可以在看完这个文档后去自己试试。如果能在15分钟内把这个练习做完（限本地测试），那也就基本可以了。</br>
+							<img src="../images/weddingExpoFile-page-img47.png" class="imginfo" style="min-height: 70px;">
+						</p>
+						<img src="../images/weddingExpoFile-page-img45.jpg" class="imginfo">
+					</div>
+				</div>
+			</div>
+			<div class="content-right js-page-wrap">
+				<i class="side"></i>
+				<a href="#explain" class="apage js-pagesike active">前言说明</p>
+				<a href="#explainPc" class="apage js-pagesike">PC切板教程</p>
+				<a href="#explainWap" class="apage js-pagesike">Wap切板教程</p>
+				<a href="#explainFile" class="apage js-pagesike">说明文档</p>
+				<a href="#explainModel" class="apage js-pagesike">商家专题模板</p>
+				<a href="javascript:void(0);" class="apage js-scrollTop">返回顶部</a>
+			</div>
+		</div>
+	</div>
+	<!--end-->
+</body>
+</html>

@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026) -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>按钮特效集合|中国婚博会</title>
+<link href="../css/doc.css" rel="stylesheet">
+<link href="../css/btn_effect.css" rel="stylesheet">
+</head>
+<body>
+<!--公共顶部导航-->
+<div class="weddingExpoFile-public-header">
+  <div class="header-nav">
+    <div class="navas">
+      <a href="../../../html/index.html" class="writee-color333">文档首页</a>
+      <a href="../../../html/needUnderstand.html" class="writee-color333">前言</a>
+      <a href="../../../html/backstageExplanation.html" class="writee-color333">后台操作讲解</a>
+      <a href="../../../html/standard.html" class="writee-color333">前端规范</a>
+      <a href="../../../html/cuttingPlate.html" class="writee-color333">商家切板教程</a>
+      <a href="../../../html/mailboxEDM.html" class="writee-color333">EDM制作规范</a>
+      <a href="../../../html/special.html" class="writee-color333">项目中的特殊效果</a>
+      <a href="../../../html/commonJs.html" class="writee-color333">项目常用JS效果</a>
+      <a href="../../btn_collection/html/btn_doc.html" class="writee-color333 activeIn active">按钮特效合集</a>
+      <a href="../../pic_collection/html/doc.html" class="writee-color333">图片特效合集</a>
+      <a href="../../../html/model.html" class="writee-color333">项目常用工具</a>
+      <a href="http://www.bootcss.com/p/lesscss/" class="writee-color333">Less教程</a>
+      <a href="../../../html/extend.html" class="writee-color333">扩展内容</a>
+    </div>
+  </div>
+</div>
+<!--end-->
+
+<!-- Docs page layout -->
+<div class="bs-docs-header" id="content" tabindex="-1">
+    <div class="container">
+        <h1>按钮特效集合</h1>
+        <p>由于在平时项目中经常使用按钮功能，而且样式也呈现多样性，所以为了节省时间，我们这里统一封装了一些按钮特效，每个按钮特效都有一个名字，我们会发个设计那边一个单独的web页面，里面集合了所有现有的按钮特效，设计那边可以自己选择合适项目的效果，只需要把特效的编号发给前端部门即可，前端部门就在这个页面里面去查找对应的编号，把代码全部拷贝到自己的项目中稍作修改即可（以后会不断的添加新的按钮特效进去，尽量让按钮特效丰富起来）</p>
+    </div>
+</div>
+
+<!-- 文档主体 --> 
+<div class="container bs-docs-container">
+    <div class="row">
+        <div class="col-xs-9" role="main">
+
+        <!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h1 id="base" class="page-header">
+                   标准按钮
+                </h1>
+                <p class="lead">
+                    在给按钮增加特效之前，我们需要做一个基础准备，即先有一个标准按钮。除了保持按钮标准外观的基础结构和样式外，还添加了特效按钮可能需要用到的公共结构和样式。基类为btn-effect，表现如下（前端可展开源码直接拷贝使用）：
+                </p>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type base-example" data-example-id="small-headings">
+
+                <!-- 基础按钮实例 -->
+                <a class="btn-effect" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                <!-- 基础按钮实例end -->
+                <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  <span class="cp">html结构:</span>
+  &lt;a class="btn-effect" href="javascript:" target="_blank" data-text="立即预约"&gt;立即预约&lt;/a&gt;
+
+  <span class="cp">css样式：</span>
+  .btn-effect {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #37474f;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #37474f;
+    position: relative;
+    z-index: 0;
+  }
+  .btn-effect:hover {
+    text-decoration: none;
+    color: #37474f;
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+  
+  <!-- 代码实例 -->
+                <h1 id="example" class="page-header">
+                   特效调用示例
+                </h1>
+                <p class="lead">
+                    要调用一个按钮特效，只需在标准按钮上添加一个类。所有的特效都对应一个类，在标准按钮上添加不同的类并拷贝对应样式，即可实现不同的效果。以特效一为例，对应的类为btn-effect001，具体调用方法如下：
+                </p>
+                <p>第一步：建立标准按钮</p>
+
+                <p>第二步：添加特效类，并拷贝特效样式，标红的部分为增加的内容</p>
+
+<div class="bs-example bs-example-type bs-example1" data-example-id="small-headings">
+
+                <!-- 基础按钮实例 -->
+                <a class="btn-effect btn-effect001" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                <!-- 基础按钮实例end -->
+                <span class="extend-btn extend-btn-x">展开源码+</span>
+                </div>
+                <figure class="highlight highlight-show">
+<pre><code class="language-html" data-lang="html">
+<span class="cp">html结构:</span>
+&lt;a class="btn-effect <span class='s'>btn-effect001</span>" href="javascript:" target="_blank" data-text="立即预约"&gt;立即预约&lt;/a&gt;
+
+<span class="cp">增加的特效样式:</span><span class='s'>
+  .btn-effect001 {
+    font-size: 0;
+  }
+  .btn-effect001:before {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    color: #37474f;
+    font-size: 16px;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  .btn-effect001:after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    color: #3f51b5;
+    font-size: 16px;
+    transform: translate3d(0, 25%, 0);
+    -webkit-transform: translate3d(0, 25%, 0);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  .btn-effect001:hover:after {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .btn-effect001:hover:before {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25%, 0);
+    transform: translate3d(0, -25%, 0);
+  }
+  .btn-effect001:hover {
+    border-color: #3f51b5;
+    background-color: rgba(63, 81, 181, 0.1);
+  }</span>
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+            
+            </div>
+          <!-- 模块一end -->
+
+<h1 id="effect_list" class="page-header">
+    按钮特效列表↓
+</h1>
+        <!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn001" class="page-header">
+                    特效1:btn-effect001
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例001 -->
+                  <a class="btn-effect btn-effect001" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例001end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  .btn-effect001 {
+    font-size: 0;
+  }
+  .btn-effect001:before {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    color: #37474f;
+    font-size: 16px;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  .btn-effect001:after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    color: #3f51b5;
+    font-size: 16px;
+    transform: translate3d(0, 25%, 0);
+    -webkit-transform: translate3d(0, 25%, 0);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  .btn-effect001:hover:after {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .btn-effect001:hover:before {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25%, 0);
+    transform: translate3d(0, -25%, 0);
+  }
+  .btn-effect001:hover {
+    border-color: #3f51b5;
+    background-color: rgba(63, 81, 181, 0.1);
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+          <!-- 模块一end -->
+
+          <!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn002" class="page-header">
+                    特效2:btn-effect002
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例002 -->
+                  <a class="btn-effect btn-effect002" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例002end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  .btn-effect002:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #37474f;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  .btn-effect002:hover:before {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .btn-effect002:hover {
+    color: #fff;
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+          <!-- 模块一end -->
+
+                    <!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn003" class="page-header">
+                    特效3:btn-effect003
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例003 -->
+                  <a class="btn-effect btn-effect003" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例003end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  .btn-effect003:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: #37474f;
+    z-index: -1;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  }
+  .btn-effect003:hover {
+    color: #fff;
+    border-color: #3f51b5;
+  }
+  .btn-effect003:hover:before {
+    opacity: 1;
+    background-color: #3f51b5;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+          <!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn004" class="page-header">
+                    特效4:btn-effect004
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例004 -->
+                  <a class="btn-effect btn-effect004" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例004end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  .btn-effect004:before {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    background: #7986cb;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    top: 0;
+  }
+  .btn-effect004:after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    background: #7986cb;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    bottom: 0;
+    line-height: 0;
+  }
+  .btn-effect004:hover:before {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  .btn-effect004:hover:after {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+          <!-- 模块一end -->
+
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn005" class="page-header">
+                    特效5:btn-effect005
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例005 -->
+                  <a class="btn-effect btn-effect005" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例005end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  .btn-effect005 {
+    font-size: 0;
+  }
+  .btn-effect005:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #7986cb;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    font-size: 16px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  .btn-effect005:after {
+    content: attr(data-text);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  .btn-effect005:hover:before {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .btn-effect005:hover:after {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+          <!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn006" class="page-header">
+                    特效6:btn-effect006
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例006 -->
+                  <a class="btn-effect btn-effect006" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例006end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  .btn-effect006 {
+    color: #37474f;
+    border: none;
+  }
+  .btn-effect006:before {
+    content: '';
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    border: 2px solid #7986cb;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    -webkit-transform: scale3d(0.7, 0.7, 1);
+    transform: scale3d(0.7, 0.7, 1);
+  }
+  .btn-effect006:after {
+    content: '';
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    background: #7986cb;
+  }
+  .btn-effect006:hover:before {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  .btn-effect006:hover:after {
+    -webkit-transform: scale3d(0.7, 0.7, 1);
+    transform: scale3d(0.7, 0.7, 1);
+    background-color: #3f51b5;
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+          <!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn007" class="page-header">
+                    特效7:btn-effect007
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例007 -->
+                  <a class="btn-effect btn-effect007" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例007end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  .btn-effect007 {
+    background: #7986cb;
+    color: #fff;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    overflow: visible;
+  }
+  .btn-effect007:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    bottom: -20px;
+    right: -20px;
+    background: inherit;
+    z-index: -1;
+    opacity: 0.4;
+    -webkit-transform: scale3d(0.8, 0.5, 1);
+    transform: scale3d(0.8, 0.5, 1);
+  }
+  .btn-effect007:hover {
+    -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    color: #ECEFF1;
+    background-color: #3f51b5;
+    -webkit-animation: anim-moema-1 0.3s forwards;
+    animation: anim-moema-1 0.3s forwards;
+  }
+  .btn-effect007:hover:before {
+    -webkit-animation: anim-moema-2 0.3s 0.3s forwards;
+    animation: anim-moema-2 0.3s 0.3s forwards;
+  }
+  @-webkit-keyframes anim-moema-1 {
+    60% {
+      -webkit-transform: scale3d(0.8, 0.8, 1);
+      transform: scale3d(0.8, 0.8, 1);
+    }
+    85% {
+      -webkit-transform: scale3d(1.1, 1.1, 1);
+      transform: scale3d(1.1, 1.1, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes anim-moema-1 {
+    60% {
+      -webkit-transform: scale3d(0.8, 0.8, 1);
+      transform: scale3d(0.8, 0.8, 1);
+    }
+    85% {
+      -webkit-transform: scale3d(1.1, 1.1, 1);
+      transform: scale3d(1.1, 1.1, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  @-webkit-keyframes anim-moema-2 {
+    to {
+      opacity: 0;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes anim-moema-2 {
+    to {
+      opacity: 0;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn008" class="page-header">
+                    特效8:btn-effect008
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例008 -->
+                  <a class="btn-effect btn-effect008" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例008end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect008 {
+  color: #fff;
+  background: #7986cb;
+}
+.btn-effect008:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin: -1em 0 0 1px;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: #3f51b5;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: scale3d(1, 2, 1);
+  transform: scale3d(1, 2, 1);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
+}
+.btn-effect008:hover:before {
+  -webkit-transform: scale3d(9, 9, 1);
+  transform: scale3d(9, 9, 1);
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn009" class="page-header">
+                    特效9:btn-effect009
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例009 -->
+                  <a class="btn-effect btn-effect009" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例009end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect009 {
+  background: #fff;
+  color: #37474f;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.btn-effect009:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 100%;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  background: #7986cb;
+}
+.btn-effect009:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 100%;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  background: #3f51b5;
+}
+.btn-effect009:hover {
+  color: #fff;
+}
+.btn-effect009:hover:before {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.btn-effect009:hover:after {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition-delay: 0.175s;
+  transition-delay: 0.175s;
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0010" class="page-header">
+                    特效10:btn-effect0010
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0010 -->
+                  <a class="btn-effect btn-effect0010" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0010end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0010 {
+  color: #fff;
+  background: #37474f;
+  -webkit-transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+.btn-effect0010:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #37474f;
+  -webkit-transform-origin: -25% 50%;
+  transform-origin: -25% 50%;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+  transform: rotate3d(0, 0, 1, 45deg);
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+}
+.btn-effect0010:hover {
+  background-color: #7986cb;
+  color: #7986cb;
+}
+.btn-effect0010:hover:after {
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  transform: rotate3d(0, 0, 1, 0deg);
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0011" class="page-header">
+                    特效11:btn-effect0011
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0011 -->
+                  <a class="btn-effect btn-effect0011" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0011end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0011 {
+  border: none;
+  background: #37474f;
+  color: #fff;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn-effect0011:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #3f51b5;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  -webkit-transform: scale3d(0.6, 0.6, 1);
+  transform: scale3d(0.6, 0.6, 1);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn-effect0011:hover {
+  background-color: #fff;
+  color: #3f51b5;
+}
+.btn-effect0011:hover:before {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  opacity: 1;
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0012" class="page-header">
+                    特效12:btn-effect0012
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0012 -->
+                  <a class="btn-effect btn-effect0012" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0012end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0012 {
+  overflow: visible;
+  border: none;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.btn-effect0012:before {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  background: #7986cb;
+  z-index: -1;
+  top: -4px;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  opacity: 0.2;
+  -webkit-transform: scale3d(0.7, 1, 1);
+  transform: scale3d(0.7, 1, 1);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.btn-effect0012:after {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  background: #7986cb;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale3d(1.1, 1, 1);
+  transform: scale3d(1.1, 1, 1);
+  -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.btn-effect0012:hover {
+  color: #fff;
+}
+.btn-effect0012:hover:before {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+.btn-effect0012:hover:after {
+  background-color: #37474f;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0013" class="page-header">
+                    特效13:btn-effect0013
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0013 -->
+                  <a class="btn-effect btn-effect0013" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0013end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0013 {
+  border: none;
+  overflow: visible;
+  color: #fff;
+}
+.btn-effect0013:before {
+  content: '';
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  border: 2px solid #37474f;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  opacity: 0;
+  -webkit-transform: scale3d(1.2, 1.2, 1);
+  transform: scale3d(1.2, 1.2, 1);
+}
+.btn-effect0013:after {
+  content: '';
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  background: #37474f;
+}
+.btn-effect0013:hover:before {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+.btn-effect0013:hover:after {
+  opacity: 0;
+  -webkit-transform: scale3d(0.8, 0.8, 1);
+  transform: scale3d(0.8, 0.8, 1);
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0014" class="page-header">
+                    特效14:btn-effect0014
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0014 -->
+                  <a class="btn-effect btn-effect0014" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0014end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0014 {
+  border: none;
+  background: #7986cb;
+  color: #7986cb;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn-effect0014:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: inherit;
+  background: #37474f;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn-effect0014:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: inherit;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #fff;
+}
+.btn-effect0014:hover {
+  color: #37474f;
+}
+.btn-effect0014:hover:before {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0015" class="page-header">
+                    特效15:btn-effect0015
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0015 -->
+                  <a class="btn-effect btn-effect0015" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0015end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0015 {
+  background: #fff;
+  color: transparent;
+  border-color: #37474f;
+  -webkit-transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.btn-effect0015:before {
+  content: attr(data-text);
+  font-size: inherit;
+  color: #37474f;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn-effect0015:hover {
+  background: #3f51b5;
+  border-color: #3f51b5;
+  color: transparent;
+}
+.btn-effect0015:hover:before {
+  color: #fff;
+  -webkit-transform: translate3d(10px, 0, 0);
+  transform: translate3d(10px, 0, 0);
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0016" class="page-header">
+                    特效16:btn-effect0016
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0016 -->
+                  <a class="btn-effect btn-effect0016" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0016end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0016 {
+  transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: color 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: color 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0016:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: #37474f;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: width 0.3s ease-out;
+  -moz-transition: width 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: width 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: width 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0016:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: #37474f;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: width 0.3s ease-out;
+  -moz-transition: width 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: width 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: width 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0016:hover {
+  color: #fff;
+}
+.btn-effect0016:hover:before {
+  width: 50%;
+}
+.btn-effect0016:hover:after {
+  width: 50%;
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0017" class="page-header">
+                    特效17:btn-effect0017
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0017 -->
+                  <a class="btn-effect btn-effect0017" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0017end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0017 {
+  transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: color 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: color 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0017:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  background: #37474f;
+  transform-origin: top center;
+  -ms-transform-origin: top center;
+  /* IE 9 */
+  -webkit-transform-origin: top center;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: top center;
+  /* Firefox */
+  -o-transform-origin: top center;
+  /* Opera */
+  transform: skewX(40deg);
+  -ms-transform: skewX(40deg);
+  /* IE 9 */
+  -moz-transform: skewX(40deg);
+  /* Firefox */
+  -webkit-transform: skewX(40deg);
+  /* Safari 和 Chrome */
+  -o-transform: skewX(40deg);
+  /* Opera */
+  transition: width 0.3s ease-out;
+  -moz-transition: width 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: width 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: width 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0017:hover {
+  color: #fff;
+}
+.btn-effect0017:hover:before {
+  width: 130%;
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0018" class="page-header">
+                    特效18:btn-effect0018
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0018 -->
+                  <a class="btn-effect btn-effect0018" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0018end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+.btn-effect0018 {
+  transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: color 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: color 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0018:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: #37474f;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  /* IE 9 */
+  -webkit-transform-origin: bottom center;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: bottom center;
+  /* Firefox */
+  -o-transform-origin: bottom center;
+  /* Opera */
+  transform: skewX(30deg);
+  -ms-transform: skewX(30deg);
+  /* IE 9 */
+  -moz-transform: skewX(30deg);
+  /* Firefox */
+  -webkit-transform: skewX(30deg);
+  /* Safari 和 Chrome */
+  -o-transform: skewX(30deg);
+  /* Opera */
+  transition: width 0.3s ease-out;
+  -moz-transition: width 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: width 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: width 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0018:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: #37474f;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform-origin: top center;
+  -ms-transform-origin: top center;
+  /* IE 9 */
+  -webkit-transform-origin: top center;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: top center;
+  /* Firefox */
+  -o-transform-origin: top center;
+  /* Opera */
+  transform: skewX(30deg);
+  -ms-transform: skewX(30deg);
+  /* IE 9 */
+  -moz-transform: skewX(30deg);
+  /* Firefox */
+  -webkit-transform: skewX(30deg);
+  /* Safari 和 Chrome */
+  -o-transform: skewX(30deg);
+  /* Opera */
+  transition: width 0.3s ease-out;
+  -moz-transition: width 0.3s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: width 0.3s ease-out;
+  /* Safari 和 Chrome */
+  -o-transition: width 0.3s ease-out;
+  /* Opera */
+}
+.btn-effect0018:hover {
+  color: #fff;
+}
+.btn-effect0018:hover:before {
+  width: 60%;
+}
+.btn-effect0018:hover:after {
+  width: 60%;
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0019" class="page-header">
+                    特效19:btn-effect0019
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0018 -->
+                  <a class="btn-effect btn-effect0019" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0018end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+/* *****************************特效19 */
+.btn-effect0019 {
+  font-size: 0;
+  border: none;
+  overflow: visible;
+}
+.btn-effect0019:before {
+  content: attr(data-text);
+  color: #7986cb;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: white;
+  font-size: 16px;
+  -ms-transform-origin: 50% 50% -20px;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% -20px;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% -20px;
+  /* Firefox */
+  -o-transform-origin: 50% 50% -20px;
+  /* Opera */
+  transform: rotateX(0);
+  -ms-transform: rotateX(0);
+  /* IE 9 */
+  -moz-transform: rotateX(0);
+  /* Firefox */
+  -webkit-transform: rotateX(0);
+  /* Safari 和 Chrome */
+  -o-transform: rotateX(0);
+  /* Opera */
+  transform-origin: 50% 50% -20px;
+  -moz-transition: all 0.1s ease-out 0s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.1s ease-out 0s;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.1s ease-out 0s;
+  /* Opera */
+  transition: all 0.1s ease-out 0s;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box;
+  border: 2px solid #7986cb;
+  line-height: 38px;
+}
+.btn-effect0019:after {
+  content: attr(data-text);
+  color: white;
+  background: #7986cb;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  -ms-transform-origin: 50% 50% -20px;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% -20px;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% -20px;
+  /* Firefox */
+  -o-transform-origin: 50% 50% -20px;
+  /* Opera */
+  transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  /* IE 9 */
+  -moz-transform: rotateX(-90deg);
+  /* Firefox */
+  -webkit-transform: rotateX(-90deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotateX(-90deg);
+  /* Opera */
+  transform-origin: 50% 50% -20px;
+  -moz-transition: transform 0.1s ease-out 0s;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.1s ease-out 0s;
+  /* Safari 和 Chrome */
+  -o-transition: transform 0.1s ease-out 0s;
+  /* Opera */
+  transition: transform 0.1s ease-out 0s;
+}
+.btn-effect0019:hover:before {
+  -ms-transform-origin: 50% 50% -20px;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% -20px;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% -20px;
+  /* Firefox */
+  -o-transform-origin: 50% 50% -20px;
+  /* Opera */
+  transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  /* IE 9 */
+  -moz-transform: rotateX(90deg);
+  /* Firefox */
+  -webkit-transform: rotateX(90deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotateX(90deg);
+  /* Opera */
+  transform-origin: 50% 50% -20px;
+  opacity: 0.4;
+}
+.btn-effect0019:hover:after {
+  -ms-transform-origin: 50% 50% -20px;
+  /* IE 9 */
+  -webkit-transform-origin: 50% 50% -20px;
+  /* Safari 和 Chrome */
+  -moz-transform-origin: 50% 50% -20px;
+  /* Firefox */
+  -o-transform-origin: 50% 50% -20px;
+  /* Opera */
+  transform: rotateX(0);
+  -ms-transform: rotateX(0);
+  /* IE 9 */
+  -moz-transform: rotateX(0);
+  /* Firefox */
+  -webkit-transform: rotateX(0);
+  /* Safari 和 Chrome */
+  -o-transform: rotateX(0);
+  /* Opera */
+  transform-origin: 50% 50% -20px;
+}
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+<!-- 模块一 -->
+            <div class="bs-docs-section">
+                <h2 id="btn0020" class="page-header">
+                    特效20:btn-effect0020
+                </h2>
+                
+                
+                <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+                    <h4>
+                      设计师使用建议：
+                    </h4>
+                    <p>建议使用在......</p>
+                </div>
+
+                <!-- 代码实例 -->
+                <div class="bs-example bs-example-type" data-example-id="small-headings">
+
+                  <!-- 按钮特效实例0018 -->
+                  <a class="btn-effect btn-effect0020" href="javascript:" target="_blank" data-text="立即预约">立即预约</a>
+                  <!-- 按钮特效实例0018end -->
+                  <span class="extend-btn">展开源码+</span>
+                </div>
+                <figure class="highlight">
+<pre><code class="language-html" data-lang="html">
+  /* *****************************特效20 */
+  .btn-effect0020 {
+    background: #fff;
+    border: none;
+    box-shadow: inset 0 0 0 2px #7986cb;
+    -moz-transition: color 0.5s ease-out 0s;
+    /* Firefox 4 */
+    -webkit-transition: color 0.5s ease-out 0s;
+    /* Safari 和 Chrome */
+    -o-transition: color 0.5s ease-out 0s;
+    /* Opera */
+    transition: color 0.5s ease-out 0s;
+  }
+  .btn-effect0020:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    box-sizing: border-box;
+    border: 2px solid transparent;
+  }
+  .btn-effect0020:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    box-sizing: border-box;
+    border: 2px solid transparent;
+  }
+  .btn-effect0020:hover {
+    color: #37474f;
+  }
+  .btn-effect0020:hover:before {
+    width: 100%;
+    height: 100%;
+    border-top-color: #37474f;
+    border-right-color: #37474f;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    -moz-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    -o-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+  .btn-effect0020:hover:after {
+    width: 100%;
+    height: 100%;
+    border-bottom-color: #37474f;
+    border-left-color: #37474f;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    -moz-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    -o-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+  }
+</code>
+</pre>
+              
+              </figure>
+              <!-- 代码实例end -->
+
+            </div>
+<!-- 模块一end -->
+
+
+
+          
+  </div>
+  <div class="col-xs-3" role="complementary">
+      <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" style="position: absolute; top: 0px;">
+          <ul class="nav bs-docs-sidenav">
+
+
+          </ul>
+          <a class="back-to-top" href="#top">
+              返回顶部
+          </a>
+      </nav>
+  </div>
+  </div>
+</div>
+
+<!-- 文档主体end -->
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/btn_doc.js"></script>
+</body>
+
+</html>
