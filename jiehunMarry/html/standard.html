@@ -126,6 +126,21 @@ if(hapj.browser.android){		//后台框架：hapj.browser.android在安卓系统�
 }
 							</textarea>
 						</p>
+						<p class="info">
+							(7)专题页面的HTML、CSS、JS需要尽量符合各自编码标准。在代码上线的时候，如果有不合规范的地方，行号上会出现警告符，如下图：
+						</p>
+						<img src="../images/error.png" alt="错误示范">
+						<div class="info">
+							我们编写页面的时候，要尽量避免这类问题。目前常见的问题如下：<br>
+							html中<br>
+							1、href中如出现&amp;符号要转义为&amp;amp;；<br>
+							2、&lt;p&gt;标签中不建议包含&lt;br&gt;；<br>
+							css中<br>
+							1、不要使用通配符*；<br>
+							2、如果属性需要添加前缀，建议把私有属性写前面，标准属性写后面；<br>
+							js中<br>
+							1、不要使用ES6语法；<br>
+						</div>
 					</div>
 				</div>
 				<div class="page js-page-title" id="standard-css">
