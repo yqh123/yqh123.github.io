@@ -126,6 +126,16 @@ if(hapj.browser.android){		//后台框架：hapj.browser.android在安卓系统�
 }
 							</textarea>
 						</p>
+						<p class="info">
+							(7)专题页面的HTML、CSS、JS需要尽量符合各自编码标准。在代码上线的时候，如果有不合规范的地方，行号上会出现警告符，如下图：
+						</p>
+						<img src="../images/error.png" alt="错误示范">
+						<div class="info">
+							我们编写页面的时候，要尽量避免这类问题。目前常见的问题如下：<br>
+							1、href中如出现&amp;符号要转义为&amp;amp;；<br>
+							2、&lt;p&gt;标签中不建议包含&lt;br&gt;；<br>
+						</div>
+
 					</div>
 				</div>
 				<div class="page js-page-title" id="standard-css">
@@ -193,6 +203,18 @@ img{
 						<p class="info">
 							(12)由于在wap端给一个元素设置了height=line-height这样的样式，会导致元素文本内容不居中显示的问题，所以，为了让文本内容居中显示，统一采用上下padding值去设置。</br>
 						</p>
+						<p class="info">
+							(13)不要使用通配符*。</br>
+						</p>
+						<p class="info">
+							(14)如果属性需要添加前缀，建议把私有属性写前面，标准属性写后面。</br>
+						</p>
+						<p class="info">
+							(15)移动端单击a链接中的img时会闪现蓝块，我们一般会将它的颜色重置为黑色半透明。代码如下： 
+						</p>
+						<textarea spellcheck="false" class="textarea-code" style="height: 35px;" name="">
+a{-webkit-tap-highlight-color:rgba(0,0,0,.4);}
+						</textarea>
 					</div>
 				</div>
 				<div class="page js-page-title" id="standard-js">
@@ -202,7 +224,7 @@ img{
 					</div>
 					<div class="content">
 						<p class="info">
-							因为都是单页面开发，所以我们建议尽量把js写在js文件里面，并且统一规范。如下图所示，在创建的对象下面去挂载一些方法和属性，这样也是为了尽可能的避免代码污染，同时也方便其他同事在修改或添加其他功能时更加安全和方便。</br>
+							因为都是单页面开发，所以我们建议尽量把js写在js文件里面，并且统一规范。如下图所示，在创建的对象下面去挂载一些方法和属性，这样也是为了尽可能的避免代码污染，同时也方便其他同事在修改或添加其他功能时更加安全和方便。另外不要使用ES6语法直接上线。</br>
 							<textarea spellcheck="false" class="textarea-code" style="height: 292px;" name="">
 var weddingExpoFile = {};
 
