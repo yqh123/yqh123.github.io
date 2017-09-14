@@ -258,10 +258,10 @@ YQHscrollGround.prototype.eventWeel=function(){
 // 绑定click显示大图
 weddingExpoFile.imgCover=function(activeDom,closeDom,coverDom){
 	activeDom.click(function(){
-		console.log(this);
-		coverDom.css({"display":"block"});
 		var src=$(this).attr("src");
-		// coverDom.children("img").attr("src",src);
+		// console.log(src);
+		coverDom.css({"display":"block"});
+		coverDom.children("img").attr("src",src);
 	})
 	closeDom.click(function() {
 		coverDom.css({"display":"none"});
