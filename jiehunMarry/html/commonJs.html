@@ -218,28 +218,28 @@ html[xmlns] .slides {display: block;}
 【js调用方法及参数说明】：
 function flexslider(){
 	var url=window.location.href;
-	$(&#x27;.flexslider&#x27;).height(&#x27;外框的高度值&#x27;);
-	if( url.indexOf(&#x27;static_edit&#x27;) !=-1 ){
+	$('.flexslider').height('外框的高度值');
+	if( url.indexOf('static_edit') !=-1 ){
 	    // 编辑模式下
-	    $(&#x27;.flexslider&#x27;).css({
-	        &#x27;overflow-x&#x27;: &#x27;hidden&#x27;,
-	        &#x27;overflow-y&#x27;: &#x27;auto&#x27;
+	    $('.flexslider').css({
+	        'overflow-x': 'hidden',
+	        'overflow-y': 'auto'
 	    });
-	    $(&#x27;.flexslider&#x27;).find(&#x27;li&#x27;).show();
+	    $('.flexslider').find('li').show();
 	}else{
 		// 非编辑模式下
-	    $(&#x27;.flexslider&#x27;).css({ &#x27;overflow&#x27;: &#x27;hidden&#x27; });
-	    $(&amp;#x27;.flexslider&amp;#x27;).flexslider({
-			animation: &amp;quot;slide&amp;quot;,		// 图片变换方式：淡入淡出(fade)或者滑动(slide)
-			direction: &amp;quot;horizontal&amp;quot;,       	// 图片滑动方向：左右(horizontal)、上下(vertical)
-			directionNav: true, 					// 是否显示左右控制按钮(wap端要设置为false)
-			slideshow: true,					// 是否自动播放
-			randomize: false, 					// 是否随机幻灯片
-			controlNav: true,					// 是否显示控制菜单(小圆点)
-			animationSpeed: 600,				// 滚动过度效果播放时长
-			slideshowSpeed: 3000, 				// 自动播放速度毫秒
-			mousewheel: true, 					// 鼠标滚轮控制图片滑动
-			pauseOnHover:true				// 鼠标移入或点击按钮区域后是否继续轮播(建议设置为true)
+	    $('.flexslider').css({ 'overflow': 'hidden' });
+	    $('.flexslider').flexslider({
+			animation: "slide",				// 图片变换方式：淡入淡出(fade)或者滑动(slide)
+			direction: "horizontal",       		// 图片滑动方向：左右(horizontal)、上下(vertical)
+			directionNav: true, 				// 是否显示左右控制按钮(wap端要设置为false)
+			slideshow: true,				// 是否自动播放
+			randomize: false, 				// 是否随机幻灯片
+			controlNav: true,				// 是否显示控制菜单(小圆点)
+			animationSpeed: 600,			// 滚动过度效果播放时长
+			slideshowSpeed: 3000, 			// 自动播放速度毫秒
+			mousewheel: true, 				// 鼠标滚轮控制图片滑动
+			pauseOnHover:true			// 鼠标移入或点击按钮区域后是否继续轮播(建议设置为true)
 		});
 	}
 };
