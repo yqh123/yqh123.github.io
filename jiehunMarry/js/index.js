@@ -257,13 +257,17 @@ YQHscrollGround.prototype.eventWeel=function(){
 
 // 绑定click显示大图
 weddingExpoFile.imgCover=function(activeDom,closeDom,coverDom){
-	activeDom.click(function(){
+	activeDom.click(function(event){
 		var src=$(this).attr("src");
-		// console.log(src);
 		coverDom.css({"display":"block"});
 		coverDom.children("img").attr("src",src);
 	})
-	closeDom.click(function() {
-		coverDom.css({"display":"none"});
+
+	coverDom.click(function(event) {
+		$(this).css({"display":"none"});
+	});
+
+	coverDom.find('img').click(function(event) {
+		event.stopPropagation();
 	});
 }

@@ -562,8 +562,16 @@ body {
   position: absolute;
   right: 20px;
   top: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
   font-size: 24px;
   color: #fff;
   cursor: pointer;
+}
+.img-cover span:hover {
+  background: #333;
 }
 /* *********************图片放大遮罩层 E************************ */
