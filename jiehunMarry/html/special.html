@@ -338,9 +338,9 @@ function oTime(){
 						</p>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端+wap端（单个日历引用）</span></br>
-							<textarea spellcheck="false" name="" class="textarea-code" style="height: 400px;">
+							<textarea spellcheck="false" name="" class="textarea-code" style="height: 462px;">
 &lt;!--html--&gt;							
-{{partial:/component/schedule?city_id=110900&amp;store_id=xxx&amp;msg=aaa|vvv}}
+{{partial:/component/schedule?city_id=xxx&amp;store_id=xxx&amp;msg=aaa|vvv}}
 
 &lt;!--js--&gt;	
 // 这断js代码是修改弹窗的弹出位置的，可以自己定义
@@ -356,11 +356,15 @@ hapj(function(H){
 参数	是否必须	说明
 city_id	否	城市id
 store_id	否	店铺id，没有是行业
-msg	否	提示文案，竖线表示
+msg		否	提示文案，竖线表示
 
 &lt;!--城市id--&gt;
 北京（110900） 、上海（310900） 、广州（440100） 
 天津（120300） 、武汉（420100） 、杭州（330100）
+
+&lt;!--行业id--&gt;
+喜宴 （1000）、摄影 （2065）、礼服 （1080）、百货 （1100）
+婚庆 （1040）、珠宝 （1060）、婚车 （2100）、旅游 （2084）
 							</textarea>
 						</p>
 						<hr style="margin-top: 10px;">
@@ -368,7 +372,7 @@ msg	否	提示文案，竖线表示
 							<span class="spancolor">【实现代码】：pc端+wap端（多个日历引用）</span></br>
 							<textarea spellcheck="false" name="" class="textarea-code" style="height: 774px;">
 &lt;!--html--&gt;
-<input type="text" store_id="城市id" class="schedule">
+<input type="text" city_id="城市id" class="schedule">
 
 &lt;!--js--&gt;
 hapj(function(H){
