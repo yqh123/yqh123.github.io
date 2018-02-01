@@ -336,9 +336,9 @@ function oTime(){
 						</p>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端+wap端（单个日历引用）</span></br>
-							<textarea spellcheck="false" name="" class="textarea-code" style="height: 568px;">
+							<textarea spellcheck="false" name="" class="textarea-code" style="height: 682px;">
 &lt;!--html--&gt;							
-&lt;div id=&quot;schedule&quot;&gt;{{partial:/component/schedule?city_id=330100&amp;amp;store_id=1000&amp;amp;msg=aaa|vvv}}&lt;/div&gt;
+&lt;div class=&quot;scheduleWrap&quot;&gt;{{partial:/component/schedule?city_id=330100&amp;amp;amp;store_id=1000&amp;amp;amp;msg=aaa|vvv}}&lt;/div&gt;
 
 &lt;!--css--&gt;
 // 如果要修改日历样式的话，建议这样修改
@@ -348,12 +348,19 @@ input[name=&quot;phone&quot;] {xxx}
 &lt;!--js--&gt;	
 // 这断js代码是修改弹窗的弹出位置的，可以自己定义
 hapj(function(H){
-  	H.ui(&#x27;#schedule,.schedule&#x27;).on(&#x27;click&#x27;,function(){
+  	H.ui(&#x27;.scheduleWrap&#x27;).on(&#x27;click&#x27;,function(){
 	    	obj = $(this);
 	    	$(&#x27;.cal&#x27;).css({ &#x27;left&#x27;:&#x27;50%&#x27;, &#x27;margin-left&#x27;:&#x27;-165px&#x27; });
 	    	$(&#x27;.scheduleDialog&#x27;).css({&#x27;position&#x27;:&#x27;fixed&#x27;,&#x27;top&#x27;:&#x27;30%&#x27;,&#x27;left&#x27;:&#x27;50%&#x27;,&#x27;margin-left&#x27;:&#x27;-175px&#x27;});
 	    	$(&#x27;input[name=store_id]&#x27;).val(obj.attr(&#x27;store_id&#x27;));
   	});
+});
+$(&#x27;.scheduleWrap&#x27;).css({ &#x27;z-index&#x27;:20000 });
+$(&#x27;.scheduleDialog&#x27;).click(function(event) {
+	event.stopPropagation();
+});
+$(&#x27;.scheduleDialog&#x27;).mousedown(function(event) {
+	$(&quot;input[name=&#x27;phone&#x27;]&quot;).focus()
 });
 
 &lt;!--参数说明--&gt;
