@@ -26,8 +26,9 @@ var config = {
     },
     get: function (key, params, callback) {
         var url = this.host + this.API[key];
-        params.token = params.token.replace("dmp ", "");
         alert(params.token)
+        params.token = params.token.replace("dmp ", "");
+
         return $.ajax({
             dataType: "json",
             type: "POST",
