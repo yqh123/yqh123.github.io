@@ -177,76 +177,80 @@ hapj.get(&#x27;share&#x27;).active(ele,{url:XXX,title:XXX,content:xxx})
 						</p>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端+wap端</span></br>
-							<textarea spellcheck="false" name="" class="textarea-code" style="height: 1062px;">
-&lt;!--html--&gt;
-&lt;div class=&quot;countDownWrap&quot; id=&quot;backInTime&quot;&gt;
-	&lt;h4 class=&quot;title&quot;&gt;距离中国婚博会开展还有&lt;/h4&gt;
-	&lt;div class=&quot;contentime&quot;&gt;
-		&lt;span class=&quot;time_t time_es&quot;&gt;00&lt;/span&gt;&lt;i&gt;天&lt;/i&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;contentime&quot;&gt;
-		&lt;span class=&quot;time_s time_es&quot;&gt;00&lt;/span&gt;&lt;i&gt;时&lt;/i&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;contentime&quot;&gt;
-		&lt;span class=&quot;time_f time_es&quot;&gt;00&lt;/span&gt;&lt;i&gt;分&lt;/i&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;contentime&quot;&gt;
-		&lt;span class=&quot;time_m time_es&quot;&gt;00&lt;/span&gt;&lt;i&gt;秒&lt;/i&gt;
-	&lt;/div&gt;
+							<textarea spellcheck="false" name="" class="textarea-code" style="height: 1160px;">
+<!--html-->
+&lt;div class=&quot;timer-box&quot;&gt;
+	&lt;span class=&quot;time&quot;&gt;2030/10/1 12:00:00&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;!--css--&gt;
-.countDownWrap{ position: relative; width: 200px; padding: 10px; font-size: 0; border: 1px solid #333; text-align: center; }
-.countDownWrap .title{ font-size: 16px; line-height: 30px; text-align: center; }
-.countDownWrap .contentime{ display: inline-block; vertical-align: middle; margin: 0 2px; }
-.countDownWrap .contentime span{ display: inline-block; width: 26px; height: 22px; line-height: 22px; font-size: 14px; text-align: center; margin-right: 2px; border: 1px solid #cacaca; vertical-align: middle; }
-.countDownWrap .contentime i{ display: inline-block; font-size: 14px; height: 22px; line-height: 22px; font-style: normal; vertical-align: middle; }
+<!--js-->
+function timer() {
+	var YD = {};
 
-&lt;!--js--&gt;
-var timer = null, str = &#x27;&#x27;;
-var nowDate = new Date().getTime(),
-targetDate = new Date(&#x27;2017/12/05 16:38:00&#x27;).getTime(),
-difftime = (targetDate - nowDate) / 1000;
+	YD.SetTimer = function(){
+	    var timerBox=$(&quot;.timer-box&quot;);
+	    if(!YD.isEditmode){
+	        // 非编辑模式下
+	        timerBox.each(function(){
+	            var deadline=$(this).find(&quot;.time&quot;).text();
+	            YD.timeCounter($(this),deadline);
+	        })
+	    }
+	};
 
-if(difftime &lt;= 0){
-	$(&#x27;#backInTime .time_es&#x27;).html(&#x27;00&#x27;);
-}else{
-	oTime();
-	timer = setInterval(function(){
-		oTime();
-	},1000);
-}
+	// 判断是否在编辑模式下
+	YD.isEditmode=(location.href.indexOf(&quot;static_edit&quot;)!==-1);
 
-function oTime(){
-	difftime--;
-	if( difftime &lt;= 0 ){ clearInterval(timer) }
-	var oHour,oMin,oSec,oDate,aHour,aMin;
-	oDate = parseInt(difftime/86400);
-	aHour = difftime%86400;
-	oHour = parseInt(aHour/3600);
-	aMin = aHour%3600;
-	oMin = parseInt(aMin/60);
-	oSec = parseInt(aMin%60)
-	if (oDate&lt;10) { oDate = &quot;0&quot; + oDate };
-	if (oHour&lt;10) { oHour = &quot;0&quot; + oHour };
-	if (oMin&lt;10) { oMin = &quot;0&quot; + oMin };
-	if (oSec&lt;10) { oSec = &quot;0&quot; + oSec };
+	// 单个倒计时,手动给定时间，参数：显示倒计时的容器，截止时间，截止提示文字
+	YD.timeCounter=function(timerBox,deadline,text){
+	    var time=YD.getTime(deadline);//获取时分秒
+	    (text===undefined)&amp;&amp;(text=&quot;活动已截止&quot;);
+	    // console.log(time);
+	    if(time.day!==undefined){
+	        timerBox.html(&quot;&lt;span&gt;&quot;+time.day+&quot;&lt;/span&gt;天&lt;span&gt;&quot;+time.hour+&quot;&lt;/span&gt;时&lt;span&gt;&quot;+time.minute+&quot;&lt;/span&gt;分&lt;span&gt;&quot;+time.second+&quot;&lt;/span&gt;秒&quot;)
+	        setTimeout(function(){
+	            YD.timeCounter(timerBox,deadline,text);
+	        },1000);
+	    }else{
+	        timerBox.html(text);
+	    }
+	}
+	    
+	// 获取天、时、分、秒
+	YD.getTime=function(deadline){
+	    // console.log(deadline);
+	    deadline=new Date(deadline).getTime();
+	    var currentTime=new Date().getTime();
+	    var duration=deadline-currentTime;
+	    var time={};
+	    // console.log(deadline,currentTime,duration);
+	    function pushTimeStr(count,tag){
+	        var timeStr=parseInt(duration/count);
+	        timeStr&lt;100&amp;&amp;(timeStr=(timeStr+100+&quot;&quot;).substring(1));
+	        // 迭代duration
+	        duration=duration%count;
+	        time[tag]=timeStr;
+	    }
+	    if(duration&gt;=0){
+	        pushTimeStr(86400000,&quot;day&quot;);
+	        pushTimeStr(3600000,&quot;hour&quot;);
+	        pushTimeStr(60000,&quot;minute&quot;);
+	        pushTimeStr(1000,&quot;second&quot;);
+	    }else{
+	        return time;
+	    }
+	    return time;
+	};
 
-	$(&#x27;.time_t&#x27;).html(oDate);
-	$(&#x27;.time_s&#x27;).html(oHour);
-	$(&#x27;.time_f&#x27;).html(oMin);
-	$(&#x27;.time_m&#x27;).html(oSec);
+	YD.SetTimer();
 }
 							</textarea>
 						</p>
 						<p class="info">
 							<span class="spancolor">【注意事项】：</span></br>
-							（1）里面的默认样式可以自己去修改，如果用的不习惯，可以自己去百度上找个，只要对应天、时、分、秒就可以</br>
-							（2）new Date()传入的日期字符串参数格式可以为整数; 也可以为字符串，但格式必须正确：</br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new Date(2009,1,1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//正确</br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new Date("2009/1/1");&nbsp;&nbsp;//正确</br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new Date("2009-1-1");&nbsp;&nbsp;//错误</br>
-							（3）new Date() 传入的时间点格式值域在0～23之间。从午夜到次日凌晨1点间hrs=0，从中午到下午1点间hrs=12；</br>
+							（1）里面的样式可以自己去修改，如果用的不习惯，可以自己去百度上找个，只要对应天、时、分、秒就可以</br>
+							（2）这个日历可以单个用，也可以多个用</br>
+							（3）日历做了编辑模式和非编辑模式处理，所以，在编辑模式下，顾问可以自由的编辑结束日期，只要时间格式对就可以，比如：2030/10/1 12:00:00，不能写成：2030-10-1 12:00:00，否则ios系统下不兼容
 						</p>
 					</div>
 				</div>
