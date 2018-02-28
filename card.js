@@ -25,12 +25,16 @@ var config = {
         ping: 16
     },
     get: function (key, params, callback) {
+        alert(123)
         var url = this.host + this.API[key];
         params.token = params.token.replace("dmp ", "");
         return $.ajax({
             type: "POST",
             url: url,
             data: params,
+            headers: {
+                "Authorization": config.token
+            },
             success: function (data) {
                 if (data.code === 0 || data.code === 1004) {
                     callback(data)
