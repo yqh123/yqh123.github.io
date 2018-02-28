@@ -28,6 +28,7 @@ var config = {
         var url = this.host + this.API[key];
         params.token = params.token.replace("dmp ", "");
         return $.ajax({
+            dataType: "json",
             type: "POST",
             url: url,
             data: params,
