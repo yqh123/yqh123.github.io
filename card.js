@@ -21,8 +21,8 @@ var config = {
     },
     token: "",
     id: {
-        wish: 32,
-        ping: 33
+        wish: 15,
+        ping: 16
     },
     get: function (key, params, callback) {
         var url = this.host + this.API[key];
