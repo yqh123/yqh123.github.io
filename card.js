@@ -47,6 +47,7 @@ var config = {
     getHbs: function (key, params, callback) {
         var url = this.host2 + this.API2[key];
         return $.ajax({
+            dataType: "json",
             type: "POST",
             url: url,
             data: params,
