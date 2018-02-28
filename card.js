@@ -103,7 +103,7 @@ var config = {
     },
     //分享积攒
     share: function (ele) {
-        var path = "card_share.html";
+        var path = "zhuanti/jhmall_lvyousheying_wap/zt_card_share_18548/";
 
         config.getHbs("info", {}, function (d) {
             //分享url=====
