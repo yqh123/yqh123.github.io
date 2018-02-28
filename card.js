@@ -19,7 +19,7 @@ var config = {
         "postdemand": "/mall/demand/post-demand",
         "wishlist": "/mall/demand/get-lvpai-wish-list"
     },
-    token: "dmp ARRNOLiM9awOBlZ5fCH9HFgaGjisjPWsDAZSYn8o+wNMAhZj75rtoh9ADyEoOvUcTwQIYO+b/rsFGEQkL3CQRB4UAmGhiPm8WQQEf319qh4ZBA5n7syt61sBAiksKf0dSgEMN+WZ",
+    token: "",
     id: {
         wish: 32,
         ping: 33
@@ -135,9 +135,12 @@ var config = {
         }
     },
     getToken: function () {
-        var hash = hapj.cache.get(hapj.conf.get('user.hash'))
-        if (hash) {
-            config.token = hash;
+        var jhu = hapj.page.getCookie('jhu') ? hapj.page.getCookie('jhu') : hapj.page.getCookie('Authorization');
+        if (jhu) {
+            if(!/^dmp/.test(jhu)){
+                jhu = 'dmp ' + jhu;
+            }  
+            config.token = jhu;
         }
         return config.token
     },
