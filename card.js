@@ -27,6 +27,7 @@ var config = {
     get: function (key, params, callback) {
         var url = this.host + this.API[key];
         params.token = params.token.replace("dmp ", "");
+        alert(params.token)
         return $.ajax({
             dataType: "json",
             type: "POST",
@@ -109,7 +110,7 @@ var config = {
 
         config.getHbs("info", {}, function (d) {
             //分享url=====
-            var uid = (d.data || {}).uid || 0
+            var uid = (d.data || {}).uid || 0;
             var url = "https://open.weixin.qq.com/connect/oauth2/authorize?response_type=code&scope=snsapi_userinfo&state=STATE&appid=wx496b7f5a2e2158f1&redirect_uri=" + encodeURIComponent("https://bj.jiehun.com.cn/" + path + "?uid=" + uid)
 
             hapj.get('share').active(ele, {url: url, title: '2018心愿季', content: '2018许愿去旅拍'})
