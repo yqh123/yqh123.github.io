@@ -25,7 +25,8 @@ var config = {
         ping: 33
     },
     get: function (key, params, callback) {
-        var url = this.host + this.API[key]
+        var url = this.host + this.API[key];
+        params.token = params.token.replace("dmp ", "");
         return $.ajax({
             type: "POST",
             url: url,
