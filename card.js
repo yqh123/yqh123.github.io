@@ -1,7 +1,7 @@
 var CUR = "cur";
 var config = {
-    host: "open.jiehun.com.cn",
-    host2: "open.jiehun.com.cn",
+    host: "https://open.jiehun.com.cn",
+    host2: "https://open.jiehun.com.cn",
     API: {
         "pageLaud": "/travel/get-page-laud",
         "userLaud": "/travel/get-user-laud",
