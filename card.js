@@ -1,7 +1,7 @@
 var CUR = "cur";
 var config = {
-    host: "http://172.16.205.33:8073",
-    host2: "http://hbs.dmp.jiabasha.cn",
+    host: "open.jiehun.com.cn",
+    host2: "open.jiehun.com.cn",
     API: {
         "pageLaud": "/travel/get-page-laud",
         "userLaud": "/travel/get-user-laud",
