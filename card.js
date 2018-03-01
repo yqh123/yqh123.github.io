@@ -169,28 +169,6 @@ var config = {
     }
 };
 
-var cookie = {
-    set:function(key,val,time){
-        var date=new Date(); 
-        var expiresDays=time;  
-        date.setTime(date.getTime()+expiresDays*24*3600*1000); 
-        document.cookie=key + "=" + val +";expires="+date.toGMTString();  
-    },
-    get:function(key){
-        var getCookie = document.cookie.replace(/[ ]/g,"");  
-        var arrCookie = getCookie.split(";")  
-        var tips;  
-        for(var i=0;i<arrCookie.length;i++){  
-            var arr=arrCookie[i].split("=");   
-            if(key==arr[0]){ 
-                tips=arr[1]; 
-                break;
-            } 
-        }
-        return tips;
-    }
-}
-
 hapj.conf.set('check.login', 1);
 
 config.initSwitch = function () {
@@ -304,4 +282,21 @@ function leftTimer() {
         }
     })
     leftTimer.timer = setTimeout("leftTimer()", 1000);
+}
+
+//设置cookies
+function setCookie(name,value) {
+    var Days = 30;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Days*24*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+
+//读取cookies
+function getCookie(name) {
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+    return unescape(arr[2]);
+    else
+    return null;
 }
