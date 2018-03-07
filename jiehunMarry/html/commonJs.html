@@ -66,14 +66,15 @@
 						</p>
 						<p class="info">
 							<span class="spancolor">【实现代码】：pc端</span></br>
-							<textarea spellcheck="false" name="" class="textarea-code" style="height: 1112px;">
+							<textarea spellcheck="false" name="" class="textarea-code" style="height: 1130px;">
 function sidebar(){
 	var oN=true;
 	var num=400;		// 滚动条滚动到哪里隐藏侧边栏
 	var view=1312;  	// 可视区域小于多少隐藏侧边栏
 	var element=$(&#x27;侧边栏class或id&#x27;);
-
-	init();         		// 初始化
+	
+	// 初始化
+	init();         		
 
 	// 滚动条滚动
 	$(window).scroll(function(event) {
@@ -142,7 +143,7 @@ function sidebar(){
 					</div>
 					<div class="content">
 						<p class="info">
-							幻灯片效果在平时页面中经常被使用，这里整理了一个jquery的flexslider幻灯片插件，兼容性也不错，并且实现了wap端触屏切换，下面的代码里面会注明对公司目前有用的接口效果，至于其他的接口效果不做解释，如果想要了解更多可以自己去问度娘。</br>
+							幻灯片效果在平时页面中经常被使用，这里整理了一个jquery的flexslider幻灯片插件，兼容性也不错，并且实现了wap端触屏切换，而且也做了编辑模式下的处理。至于样式问题可以自己调整css下面的代码里面会注明对公司目前有用的接口效果，至于其他的接口效果不做解释，如果想要了解更多可以自己去问度娘。</br>
 						</p>
 						<p class="info">
 							<div class="flexslider" style="width:100%;">
