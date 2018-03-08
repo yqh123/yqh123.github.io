@@ -116,7 +116,7 @@ var config = {
             var uid = (d.data || {}).uid || 0;
             var url = "https://open.weixin.qq.com/connect/oauth2/authorize?response_type=code&scope=snsapi_userinfo&state=STATE&appid=wx496b7f5a2e2158f1&redirect_uri=" + encodeURIComponent("https://bj.jiehun.com.cn/" + path + "?uid=" + uid)
 
-            hapj.get('share').active(ele, {url: url, title: '2018心愿季', content: '2018许愿去旅拍'})
+            hapj.get('share').active(ele, {url: url, title: '中国婚博会', content: '2018许愿去旅拍，赢5万元心愿基金！' img_url: 'https://img.tthunbohui.cn/zhuanti/18471/shareLogo.png'})
         })
     },
     toApp: function () {
